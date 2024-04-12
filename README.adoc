@@ -1,0 +1,154 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+ifdef::env-github[]
+:note-caption: :information_source:
+endif::[]
+
+= Khronos Sample Repository
+
+This repository is a working example of how to construct a Khronos
+Specification repository.
+Most of the examples and documentation are equally applicable to
+repositories for other purposes.
+
+[NOTE]
+.Note
+====
+Metacommentary about how to apply examples in other repositories will be set
+off in Notes like this one, where possible.
+====
+
+This file, `README.adoc`, describes the overall purpose and structure of the
+repository, and is the first content that will be visible when viewing the
+repository on Github.
+It is written in "`Github-flavored asciidoctor`" markup, which is a limited
+subset of the link:https://asciidoctor.org[Asciidoctor] text markup
+language.
+Github and Khronos' internal Gitlab server both render asciidoctor markup,
+and we recommend using asciidoctor markup wherever possible in your
+own repository.
+Many Khronos Specifications are authored in asciidoctor, and assistance is
+available if you want to convert an existing specification or other document
+to asciidoctor format.
+
+[NOTE]
+.Note
+====
+Markdown (`.md`) format may also be used for repository meta-information
+like this README, but markdown is more limited than asciidoctor, and we
+recommend using the same markup format throughout the repository for
+consistency.
+====
+
+To the extent possible, the purpose and contents of every file in this
+repository is self-documenting.
+In addition, the repository contains a complete "`specification`" describing
+best practices when constructing your own new repository.
+
+
+== External Contributions
+
+[NOTE]
+.Note
+====
+This section should be filled in so that people from outside Khronos wanting
+to contribute to your repository are given guidance.
+The language in this section is boilerplate used in several other Khronos
+repositories.
+====
+
+Khronos welcomes feedback in Github Issues, and proposed changes in Github
+Pull Requests (PRs), but will not necessarily accept all such changes.
+
+Please keep your issues and pull requests focused on solving a single
+problem. Broader feedback that tries to solve multiple problems, or touches
+many parts of the repository at once, is difficult for us to review in a
+timely fashion.
+
+
+== Branch Structure
+
+[NOTE]
+.Note
+====
+This section should be filled in to explain the important branches and tags
+in the repository.
+Every repository has a default branch, which usually corresponds to the
+latest published version of the documents in that repository.
+Khronos practice, following emerging norms in the open source community, is
+that the default branch should be named `main`.
+This is the default when creating a new repository, but can be changed by
+the repository administrators in the
+link:https://github.com/oddhack/Sample-Repo/settings/branches[repository
+settings].
+====
+
+The current sample repository documentation is maintained in the default
+branch (`main`) of the repository.
+
+At present, this repository does not use tags.
+
+
+== Directory Structure
+
+[NOTE]
+.Note
+====
+This section should be filled in to explain the directory hierarchy of the
+repository.
+====
+
+```
+README.adoc           This file
+BUILD.adoc            Documents how to build the documents in the repository
+CONTRIBUTING.adoc     Requirements for external contributions to the repository
+COPYING.adoc          Copyright and licensing information
+CODE_OF_CONDUCT.adoc  Khronos Code of Conduct
+LICENSE.adoc          Summary of licenses used by files in the repository
+ChangeLog.txt         Change log summary for each public spec update
+Makefile              Makefile to build the documents
+appendices/           Specification appendices
+chapters/             Specification chapters
+config/               Asciidoctor configuration, CSS, and index generator
+images/               Images (figures, diagrams, icons)
+style/                Sources for "`styleguide`" (Vulkan Documentation and Extensions: Procedures and Conventions)
+```
+
+
+== Building the Sample Repository Specification
+
+[NOTE]
+.Note
+====
+This section should be filled in to explain, at a superficial level, how to
+generate the primary target from the repository.
+The primary target is typically a specification, but the section title
+should be changed for repositories with other or multiple purposes.
+====
+
+The document sources are marked up in Asciidoctor format, and we use
+`asciidoctor` and related toolchain components to generate output documents.
+See link:BUILD.adoc[BUILD.adoc] for more information on installing the
+toolchain and building the Specification.
+
+
+== Building Other Artifacts
+
+[NOTE]
+.Note
+====
+This section should be filled in to explain how to generate other, secondary
+artifacts (such as header files) from the repository.
+If there are no such artifacts, remove the section.
+====
+
+There are no artifacts other than the Specification at this time.
+
+[NOTE]
+.Note
+====
+Other important, high-level information may be described in
+additional sections of the README, as needed.
+====
+

@@ -1,0 +1,132 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+// Define titles and title logos for either Vulkan or Vulkan SC
+ifdef::VKSC_VERSION_1_0[]
+:DocTitle: Vulkan^®^ {SC} {revnumber} - A Specification {apititle} : Based on Vulkan {baserevnumber}
+:SC: SC
+:VulkanLogo: vulkansc-unscaled.svg
+:LogoDir: vulkansc
+endif::VKSC_VERSION_1_0[]
+ifndef::VKSC_VERSION_1_0[]
+:DocTitle: Vulkan^®^ {revnumber} - A Specification {apititle}
+:SC:
+:VulkanLogo: vulkan2-unscaled.svg
+:LogoDir: vulkan
+endif::VKSC_VERSION_1_0[]
+
+// :regtitle: is explained in
+// https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
+
+= Khronos Sample Specification
+:regtitle: pass:q,r[^®^]
+Jon Leech & Neil Trevett
+:data-uri:
+:icons: font
+:toc2:
+:toclevels: 2
+:numbered:
+:source-highlighter: rouge
+:rouge-style: github
+:docinfo: shared-header
+:docinfodir: {config}
+:title-logo-image: image:{images}/{KhronosLogo}[top="25%"]
+:attribute-missing: warn
+
+// Various special / math symbols. This is easier to edit with than Unicode.
+include::{config}/attribs.adoc[]
+
+// Table of contents is inserted here
+toc::[]
+
+:leveloffset: 1
+
+<<<<
+
+// Preamble (license) "chapter"
+
+include::{chapters}/preamble.adoc[]
+
+// Actual chapters
+
+include::{chapters}/introduction.adoc[]
+
+include::{chapters}/licenses.adoc[]
+
+include::{chapters}/repostructure.adoc[]
+
+// Appendices
+:numbered!:
+
+include::{appendices}/lexicon.adoc[]
+
+include::{appendices}/credits.adoc[]
+
+
+// Repository Licensing
+//     License Choices & Defaults
+//         Proprietary spec license on ratified specs only
+//     REUSE compliance
+// Repository Structure
+//     Boilerplate files & Contents
+// Continuous Integration
+//     Gitlab CI / Github Actions
+//         REUSE compliance
+//     Docker images, Khronos & other
+// Github / Gitlab coexistence
+//     Are both private & public repos needed?
+//     Keeping repos synced
+//     Keeping private content private (tags, commits, etc.)
+// Github Management
+//     CLA deployment
+//     Public issue / PR responsiveness
+//         Open issue
+// Publication Strategies
+//     When to publish
+//     Generating PDF / HTML artifacts
+//     In repository - only for simple markdown
+//     In registries
+//
+// Specification Markup & Authoring
+//     Choice of tools
+//         Legacy - Word, LaTeX
+//         Text Markup - Asciidoctor, Markdown
+//             Simple use cases renderable from gitlab/github, but not in general
+//         Other - raw HTML
+//     Asciidoctor as Khronos default
+//     Basic Asciidoctor toolchain
+//         PDF / HTML options
+//         Images
+//         Math
+//         Khronos default or custom Docker images
+//     Custom Macros - Ruby extensions & offline processing
+//     Complex toolchain w/API XML - refer to Vulkan / OpenXR
+//         May be useful for C APIs
+//         Talk to Jon / Ryan
+//
+//
+// I'm not sure that help would make it go faster, but there are a couple of
+// different aspects of "best practices" where having a working example to
+// refer to could help:
+//
+// WG is new to asciidoctor and needs help with basic markup / toolchain issues
+// - how to they install and run the tools locally, how do they use Khronos
+// Docker images, where are the user guides for asciidoctor, and so on
+//
+// WG is out of date WRT licensing & copyright issues (which licenses to use,
+// how to express them in code, how to setup a CLA with James' assistance)
+//
+// WG repository has poorly structured repository (missing boilerplate files
+// like CODE_OF_CONDUCT, COPYING, README, etc., or not REUSE-compliant)
+//
+// WG processes for github engagement aren't well-developed - this one can't be
+// addressed just by the existence of an example repository but some repo
+// files, like CONTRIBUTING, explain how github engagement works from the point
+// of view of the outside developer wanting to contribute.
+//
+// I'm thinking of having one or more complete mini-specs where the
+// "specification language" is just an explanation of what is being done and
+// why, so for example the "Introduction" chapter would explain what that is
+// and why you want one, and so on. Then the build system would include enough
+// comments to explain what each step is and why you want it, the CI scripts
+// would explain how they're invoked and the results viewed, and so on.

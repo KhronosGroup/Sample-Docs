@@ -1,0 +1,17 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+= Code of Conduct
+
+This repository is managed by the Khronos Group.
+Interactions here must follow the
+https://www.khronos.org/developers/code-of-conduct[Khronos Code of Conduct],
+which prohibits aggressive or derogatory language.
+Please keep the discussion friendly and civil.
+
+[NOTE]
+.Note
+====
+This is standard Khronos boilerplate, and must be included in every Khronos
+repository on Github.
+====

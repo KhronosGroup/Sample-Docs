@@ -1,0 +1,197 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+
+[[introduction]]
+= Introduction
+
+This document, referred to as the "`Sample Specification`" or just the
+"`Specification`" hereafter, is a reference for creating repositories
+containing actual Khronos Specifications.
+
+The Sample Specification is not, itself, a ratified Khronos product.
+Its purpose is to
+
+  * Provide a reference repository which can be cloned as the starting point
+    for new Khronos Specifications.
+  * Provide examples and documentation for using specification repository
+    tooling and infrastructure including:
+  ** Boilerplate files needed by all Khronos repositories
+  ** Licenses and Contributor License Agreements
+  ** Asciidoctor markup and toolchain, of which this Specification is a an
+     example.
+  ** Continuous Integration tooling for Github and Khronos Gitlab.
+
+The published version of this Specification is available in the
+https://registry.khronos.org/Sample/[Sample Registry].
+
+The repository used to generate the Specification is stored in the
+https://github.com/KhronosGroup/Sample-Docs[Sample Documentation Repository]
+
+The Sample Repository also has a public issue tracker, and allows the
+submission of pull requests that improve the Specification.
+
+
+[[introduction-conventions]]
+== Document Conventions
+
+This document is intended for use by Khronos Working Groups creating new
+specifications.
+As such, it includes some language that is relevant only when defining an
+actual Specification.
+
+[NOTE]
+.Note
+====
+Informative notes, such as this paragraph, are used to provide commentary
+and context.
+====
+
+Actual Khronos specifications are intended for use by both implementors, and
+by application developers seeking to make use of implementations.
+A specification forms a contract between these parties.
+
+Specification text may address either implementors or developers.
+Typically the intended audience can be inferred from context, though some
+sections are defined to address only one of these parties.
+Any requirements, prohibitions, recommendations or options defined by
+<<introduction-normative-terminology, normative terminology>> are imposed
+only on the audience of that text.
+
+
+[[introduction-ratified]]
+=== Ratification
+
+_Ratification_ of a Khronos specification is a status conferred by vote of
+the Khronos Board of Promoters, bringing that core version or extension
+under the umbrella of the Khronos IP Policy.
+
+The Sample Specification is not ratified, since it contains no IP, just
+process documentation.
+Actual Khronos specifications, including core versions and optional
+Khronos-defined extensions, should be ratified prior to publication.
+Ratification status is shown in the <<preamble, document preamble>>.
+
+[NOTE]
+.Note
+====
+Ratification status is primarily of interest to Khronos members developing
+their own implementations of a specification.
+
+For developers, ratification does not necessarily mean that an extension is
+"`better`"; has a more stable API; or is more widely supported than
+alternative ways of achieving that functionality.
+
+Interactions between ratified and non-ratified extensions are not themselves
+ratified.
+====
+
+
+[[introduction-informative-language]]
+=== Informative Language
+
+Some language in the specification is purely informative, intended to give
+background or suggestions to implementors or developers.
+
+If an entire chapter or section contains only informative language, its
+title will be suffixed with "`(Informative)`".
+
+All NOTEs are implicitly informative.
+
+
+[[introduction-normative-terminology]]
+=== Normative Terminology
+
+Within this specification, the key words *must*, *required*, *should*,
+*recommended*, *may*, and *optional* are to be interpreted as described in
+https://www.ietf.org/rfc/rfc2119.txt[RFC 2119 - Key words for use in RFCs to
+Indicate Requirement Levels] (https://www.ietf.org/rfc/rfc2119.txt).
+The additional key word *optionally* is an alternate form of *optional*, for
+use where grammatically appropriate.
+
+These normative words are emphasized in the Specification for clarity.
+In text addressing application developers, their use expresses requirements
+that apply to application behavior.
+In text addressing implementors, their use expresses requirements that apply
+to implementations.
+
+[NOTE]
+.Note
+====
+Please be conscious in use of normative terminology, and ensure that each
+such use is agreed by the Working Group controlling a Specification.
+These terms place constraints on implementations that may have consequences
+for IP licensing and Ratification.
+====
+
+In text addressing application developers, the additional key words *can*
+and *cannot* are to be interpreted as describing the capabilities of an
+application, as follows:
+
+*can*::
+This word means that the application is able to perform the action
+described.
+
+*cannot*::
+This word means that the API and/or the execution environment provide no
+mechanism through which the application can express or accomplish the action
+described.
+
+These key words are never used in text addressing implementors.
+
+[NOTE]
+.Note
+====
+There is an important distinction between *cannot* and *must not*, as used
+in a Khronos Specification.
+*Cannot* means something an application literally is unable to express or
+accomplish through the API or language.
+*Must not* means something that the application is capable of expressing,
+but the consequences of doing so are undefined: and potentially
+unrecoverable for the implementation (see <<fundamentals-validusage>>).
+====
+
+Unless otherwise noted in the section heading, all sections and appendices
+in this document are normative.
+
+
+[[introduction-technical-terminology]]
+=== Technical Terminology
+
+Specifications often make use of commonly used, domain-specific engineering
+terminology to identify and describe API constructs and and their
+attributes, states, and behaviors.
+For example, a "`Graphics Pipeline`" is a common term in the field of
+computer graphics, but has a specific meaning with respect to the Vulkan
+API.
+The <<glossary,Glossary>> defines the basic meanings of such terms in the
+context of the Specification.
+The Specification body provides fuller definitions of the terms and may
+elaborate, extend, or clarify the <<glossary,Glossary>> definitions.
+When a term defined in the <<glossary,Glossary>> is used in normative
+language within the Specification, the definitions within the Specification
+govern and supersede any meanings the terms may have in other technical
+contexts (i.e. outside the Specification).
+
+
+[[introduction-normative-references]]
+=== Normative References
+
+References to external documents are considered normative references if the
+Specification uses any of the normative terms defined in
+<<introduction-normative-terminology>> to refer to them or their
+requirements, either as a whole or in part.
+
+The following documents are referenced by normative sections of the
+specification:
+
+[[spdx]]
+IEEE.
+August, 2008.
+_IEEE Standard for Floating-Point Arithmetic_.
+IEEE Std 754-2008.
+https://dx.doi.org/10.1109/IEEESTD.2008.4610935 .
+
+[[reuse]]
+_Khronos Data Format Specification, version 1.3_.
+https://registry.khronos.org/DataFormat/specs/1.3/dataformat.1.3.html .

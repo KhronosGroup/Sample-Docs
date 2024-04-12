@@ -1,0 +1,179 @@
+// Copyright 2020 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+= Khronos Sample Repository Specification Build Instructions and Notes
+:toc2:
+:toclevels: 2
+
+ifdef::env-github[]
+:note-caption: :information_source:
+endif::[]
+
+
+[[intro]]
+== Introduction
+
+This document describes how to build the Sample Repository specification.
+
+It documents how to set up your build environment, build steps and targets,
+and contains some troubleshooting advice.
+
+[NOTE]
+.Note
+====
+This file will necessarily be very repository-specific.
+However, many Khronos repositories use an asciidoctor-based build toolchain,
+and the guidelines here may be applicable.
+====
+
+
+[[building]]
+== Building The Specification
+
+First, clone the Khronos Github repository containing the specification to
+your local Linux, Windows, or Mac PC.
+The repository is located at https://github.com/KhronosGroup/Sample-Repo/ .
+
+Next, install all the necessary build tools (see <<depends,Software
+Dependencies>> below).
+If you are using the <<depends-docker, Khronos-Provided Docker Image>>,
+which we strongly recommend, then one way to build using the image (assuming
+a Linux docker host) is using the bash script `runDocker`:
+
+    $ ./runDocker
+
+This runs the image with the cloned repository under `/spec` and accesses it
+as your own user and group ID, so that your repository doesn't get filled
+with files owned by root or another user.
+
+Then in the running image,
+
+    $ cd /spec
+    $ make html
+
+which builds an HTML5 specification output.
+
+There are many other ways of using the image, including using the open
+source `podman` tool instead of docker; running it inside a Continuous
+Integration pipeline; running docker locally with persistent Docker volume
+storage of the repository; and so on.
+
+If you are not using our Docker image to build with, and you have a
+<<depends-nondocker, Non-Docker Build Environment>> with the entire
+toolchain installed, you can go to <repo-path> and invoke the same `make`
+command there.
+
+The specification output is generated in the directory specified by the
+Makefile variable `$(OUTDIR)` (by default, `out/`).
+
+[NOTE]
+.Note
+====
+All targets supported by the build process, should be described here.
+====
+
+Targets supposed by the Makefile are:
+
+  * `html` -- Single-file HTML5 in `$(OUTDIR)/html/sample.html`, and KaTeX
+    dependency in $(OUTDIR)/katex
+  * `pdf` -- PDF in `$(OUTDIR)/pdf/vkspec.pdf`
+
+If you encounter problems refer to the <<troubleshooting>> section.
+
+
+=== Images Used In The Specification
+
+All images used in the specification are in the `images/` directory in the
+SVG format, and were created with Inkscape.
+We recommend using Inkscape to modify or create new images, as we've had
+problems using SVG files created by some other tools; especially in the PDF
+builds.
+
+
+[[depends]]
+== Software Dependencies
+
+This section describes the software components used by the specification
+toolchain.
+
+
+[[depends-docker]]
+=== Khronos-Provided Docker Image
+
+Khronos publishes a Docker image containing a Debian Linux distribution with
+the entire toolchain preinstalled.
+
+We will occasionally update this image as needed, and we recommend people
+needing to build from this repository use the Docker image.
+
+[NOTE]
+.Note
+====
+If your specification needs tools that are not present in the
+asciidoctor-spec image, options include:
+
+  * Filing an issue on the
+    link:https://github.com/KhronosGroup/DockerContainers[KhronosGroup/DockerContainers]
+    repository in which the container Dockerfile is maintained, asking for
+    the tools to be added.
+    We may do this if the tools are likely to be of general interest, or if not,
+    can assist you with:
+  * Creating your own image, either based on the asciidoctor-spec image or
+    entirely separate.
+    For example, the OpenXR Working Group does this for their specification
+    builds.
+    Please host the Dockerfile in the
+    link:https://github.com/KhronosGroup/DockerContainers[KhronosGroup/DockerContainers]
+    repository if you do this.
+  * Installing tools dynamically in the base asciidoctor-spec image at
+    startup time.
+    This is common practice, but it's easy to use a lot of time installing
+    dependencies, compared to pre-installing them in an image.
+    Additionally, if your tools need to be installed at the OS level (like
+    Debian packages), you will have to run the container as `root`.
+    This is fine for CI purposes, but when running locally, any generated
+    files in your repository clone will be owned by `root`, and hence
+    unremoveable by you.
+====
+
+Docker installation is beyond the scope of this document.
+Refer to link:https://docs.docker.com/get-docker/[the Docker website] for
+information about installing Docker on Linux, Windows, and MacOS X.
+
+The name of the build image is
+
+    khronosgroup/docker-images:asciidoctor-spec
+
+It can be pulled from the
+link:https://hub.docker.com/repository/docker/khronosgroup/docker-images[Dockerhub
+image repository] with the command
+
+    docker pull khronosgroup/docker-images:asciidoctor-spec
+
+Once docker is installed and the asciidoctor-spec image is available, it can
+be executed as described above under <<building, Building the Spec>> to
+generate Specification output documents or other Makefile targets.
+
+
+[[depends-nondocker]]
+=== Non-Docker Build Environments
+
+We do not actively support building outside of our Docker image, but it is
+straightforward to reproduce our toolchain in a Debian (or similar APT-based
+Linux) distribution by executing the same steps as the
+link:https://github.com/KhronosGroup/DockerContainers/blob/main.Dockerfile[asciidoctor-spec.Dockerfile]
+used to build our image.
+
+It should be possible to apply the same steps in a Windows Subsystem for
+Linux (WSL) environment running Debian on Windows, as well.
+
+*NOTE* while we have no intention of forcing people to use our Docker image,
+we cannot support every possible build environment.
+The Docker image is a straightforward way to use the specification
+repository with almost all modern desktop environments.
+
+
+[[history]]
+== Revision History
+
+  * 2024-04-11 - Initial version

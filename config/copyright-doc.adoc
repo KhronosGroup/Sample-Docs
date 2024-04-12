@@ -1,0 +1,91 @@
+// This is version V1May20 of the Khronos Document Copyright License
+// Header, reformatted for asciidoc markup and for expository purposes in
+// the Khronos Sample Repository.
+// The original source is in Member Causeway at
+//  https://members.khronos.org/wg/General/document/23703
+// and updates there should be reflected here.
+
+// Some sections of this license are optional and are selected by
+// asciidoctor attributes set when building documents including this
+// file.
+// Comments starting with NOTE: indicate that the following paragraph(s)
+// need to be modified to incorporate language suitable to the document
+// being generated.
+//
+// Optional sections include:
+//
+//  - The "Successor Document" section is included when generating a
+//    document derived from a differently named document.
+//    Set the :successor_document: attribute and modify this section as described
+//    below if needed.
+
+// NOTE: asciidoctor attributes controlling inclusion of sections can be set
+// here by uncommenting the appropriate lines, or on the asciidoctor command
+// line.
+
+// :successor_document:
+
+
+// NOTE: The Copyright statement should include the year of the
+// Document's release.
+// If this is a new version of an existing Document, include a range of
+// dates starting from the year that the initial version of the
+// Document was released.
+// E.g. if this is version 4.0 of a Document released in 2023, and V1.0
+// of the Document was released in 2012, then the first line should
+// replace "[insert date(s)]" with "2012-2023".
+
+Copyright [insert date(s)] The Khronos Group Inc.
+
+This Document is protected by copyright laws and contains material
+proprietary to Khronos.
+Except as described by these terms, it or any components may not be
+reproduced, republished, distributed, transmitted, displayed, broadcast or
+otherwise exploited in any manner without the express prior written
+permission of Khronos.
+
+Khronos grants a conditional copyright license to use and reproduce the
+unmodified Document for any purpose, without fee or royalty, EXCEPT no
+licenses to any patent, trademark or other intellectual property rights are
+granted under these terms.
+
+Khronos makes no, and expressly disclaims any, representations or
+warranties, express or implied, regarding this Document, including,
+without limitation: merchantability, fitness for a particular purpose,
+non-infringement of any intellectual property, correctness, accuracy,
+completeness, timeliness, and reliability.
+Under no circumstances will Khronos, or any of its Promoters, Contributors
+or Members, or their respective partners, officers, directors, employees,
+agents or representatives be liable for any damages, whether direct,
+indirect, special or consequential damages for lost revenues, lost profits,
+or otherwise, arising from or in connection with these materials.
+
+
+// Optional "Successor Document" section
+// NOTE: fill in [insert successor documents here] below
+
+ifdef::successor_document[]
+
+This Document contains substantially unmodified functionality from, and
+is a successor to, Khronos documents including [insert successor
+documents here].
+
+endif::successor_document[]
+
+
+// Trademark section
+// NOTE: make sure that all relevant marks are included, since this list
+// grows over time. Trademarks that are not referenced by this Document
+// can be removed.
+
+Khronos and Vulkan are registered trademarks, and 3D Commerce, ANARI, glTF,
+KTX, Kamaros, NNEF, OpenVG, OpenVX, SPIR-V, SPIR, SYCL, Vulkan SC, and WebGL
+are trademarks of The Khronos Group Inc.
+OpenXR is a trademark owned by The Khronos Group Inc. and is registered as a
+trademark in China, the European Union, Japan and the United Kingdom.
+OpenCL is a trademark of Apple Inc. used under license by Khronos.
+OpenGL is a registered trademark and the OpenGL ES and OpenGL SC logos are
+trademarks of Hewlett Packard Enterprise used under license by Khronos.
+ASTC is a trademark of ARM Holdings PLC.
+All other product names, trademarks, and/or company names are used solely
+for identification and belong to their respective owners.

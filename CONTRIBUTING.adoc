@@ -1,0 +1,92 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+= Contributing
+
+[NOTE]
+.Note
+====
+This file describes how to propose and license contributions to the
+repository.
+It must be included in every Khronos public repository, although the exact
+licensing details will vary depending on the repository.
+Some of this content is redundant with the Sample Specification, as this
+file is intended to be imported to a new specification repository while the
+Sample Specification is not.
+====
+
+Contributions to the Sample-Repository repository are welcome.
+
+Contributions may be in the form of Issues proposing a change, or Pull
+Requests containing fixes for, or additions to:
+
+  * Specification text
+  * Sample files
+  * Scripts and other build tools
+  * Metadocumentation
+
+Please keep contributions focused on solving a single issue or bug.
+
+
+== Copyright Notice and License Template
+
+If you are adding a new file, it must be under one of the following
+licenses:
+
+  * Creative Commons Attribution 4.0 International, for specification markup
+    files and other documentation (for example, link:spec.adoc[`spec.adoc`])
+  * Apache 2.0, for scripts and other tooling (for example,
+    link:Makefile[`Makefile`]
+  * Apache 2.0 OR MIT, for source-like files that may need to used in GPL
+    projects.
+    Dual licensing is reserved for absolutely necessary cases, and must be
+    approved by the Khronos Working Group managing this repository.
+
+We use a short license in each file consisting of just the copyright
+statement and the link:https://spdx.dev/learn/handling-license-info/[SPDX
+license identifier] of the license applying to that file, rather than
+including the full license text in each file.
+
+The full license text for each license used must be included in the
+`LICENSES` directory.
+The link:https://reuse.software/[REUSE] tool is used in CI to verify that
+all files in this repository are appropriately licensed.
+
+For example, this file uses the license
+
+// The {empty} attribute is needed to avoid confusing REUSE
+[source,asciidoc,subs=attributes+]
+----
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-{empty}Identifier: CC-BY-4.0
+----
+
+[NOTE]
+.Note
+====
+Include all licenses under which contributions may be accepted.
+Only contributions under the open source licenses used in the repository are
+acceptable.
+If you use externally generated files under other open source licenses,
+those licenses must be sufficiently compatible with the repository licenses
+for their intended purposes.
+For example, you may incorporate an external script or code sample under a
+pure MIT license in this repository, but it must maintain its original
+license.
+====
+
+
+== Contributor License Agreement (CLA)
+
+When you propose a pull request on Sample-Repository, you must execute a
+Contributor License Agreement, to confirm you own your work and are granting
+Khronos the necessary permissions to redistribute it under our licenses.
+
+[NOTE]
+.Note
+====
+Every public Khronos repository must have a Contributor License Agreement
+setup before any outside contributions can be accepted.
+See the sample Specification document in this repository for details about
+selecting and configuring CLAs.
+====

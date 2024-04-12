@@ -1,0 +1,18 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+[appendix]
+[[credits]]
+= Credits (Informative)
+
+The Sample Specification and corresponding Sample Repository were created by
+Jon Leech based on the "`Khronos Open Source Repository Resources`" document
+maintained by Neil Trevett, and on Khronos' collective experience with open
+source licenses, repository creation, and specification authoring.
+
+Substantial contributions were made by:
+
+  * Jon Leech, Vulkan and OpenGL Spec Editor
+  * James Riordon, Khronos Webmaster
+  * Emily Stearns, Khronos Director
+  * Neil Trevett, Khronos President

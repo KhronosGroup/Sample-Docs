@@ -1,0 +1,20 @@
+#!/bin/bash
+# Copyright 2024 The Khronos Group Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# runDocker - run a Docker image with the repository mounted inside
+# Usage: runDocker [image]
+# If not provided, the image defaults to the Khronos-provided
+# asciidoctor-spec image.
+
+image=${1-:asciidoctor-spec}
+
+# Determine absolute path to the script directory
+relpath="$(dirname -- "${BASH_SOURCE[0]}")"
+specpath="$(cd -- "$relpath" && pwd)"
+
+echo "Running Docker with image $image"
+echo "Mounting $specpath as /spec in the Docker image"
+docker run --user `id -u`:`id -g` \
+            -it --rm -v $specpath:/spec \
+            khronosgroup/docker-images${image} /bin/bash
