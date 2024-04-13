@@ -68,4 +68,7 @@ ifndef::backend-html5[]
 :wbro:
 endif::backend-html5[]
 
-// Define convenience macros (e.g. short names for common phrases) here
+// Define convenience macros (e.g. short names for common phrases, links) here
+
+// Base URL for files in the GitHub repo
+:specrepofiles: https://github.com/KhronosGroup/Sample-Docs/blob/main

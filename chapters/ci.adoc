@@ -1,0 +1,67 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+[[ci]]
+= Continuous Integration
+
+The Sample-Docs repository is configured to perform CI on both Khronos'
+internal gitlab server and on GitHub using GitHub Actions.
+
+GitHub supports other CI services such as Azure and Travis, but
+Actions is most closely integrated with GitHub and requires less
+configuration than other options.
+
+[NOTE]
+.Note
+====
+GitHub Actions CI costs are becoming significant for Khronos, in addition
+to some performance issues we've been experiencing.
+We are considering options and it is possible we will change the
+recommendation away from Actions, or start self-hosting Actions runners.
+====
+
+
+[[ci-jobs]
+== Sample CI Scripts and Jobs
+
+Gitlab and GitHub Actions CI scripts are both YAML format files, but the
+syntax of the YAML differs substantially.
+Both the Gitlab `.gitlab-ci.yml` and GitHub Actions
+`.github/workflows/CI.yml` define two jobs:
+
+  * The `license-check` job runs REUSE to validate repository licensing.
+  * The `spec-generate` job builds the specification artifacts in HTML and
+    PDF forms.
+
+These are just a starting point for CI in a specification repository.
+
+
+== Sample CI Runtime
+
+Khronos publishes a Docker image containing a Debian Linux distribution with
+the entire toolchain preinstalled.
+This image is used to run the sample CI jobs, since it has all the necessary
+specification toolchain components preinstalled.
+We encourage using this image in new specification repositories as well.
+
+For more discussion of the Docker image, see the
+link:{specrepofiles}/BUILD.adoc#depends-docker[Khronos-Provided Docker
+Image] section of `BUILD.adoc`.
+
+[NOTE]
+.Note
+====
+We have had problems with Docker caching images and not updating to the
+latest versions pushed to Dockerhub.
+Trying to diagnose these problems is very difficult since CI executes in
+cloud resources we do not control and have little access to.
+To work around these problems, we specify the Docker image by its SHA rather
+than its name.
+When the image is updated on Dockerhub, the SHA encoded in the CI scripts
+and the `runDocker` script must also be updated.
+====
+
+
+== Sample CI Outputs
+
+TODO provide links to appropriate pages

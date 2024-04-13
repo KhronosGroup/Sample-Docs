@@ -9,5 +9,5 @@
 [[preamble]]
 = Preamble
 
-include::{config}/copyright-spec.adoc[]
+include::{config}/copyright-ccby.adoc[]
 

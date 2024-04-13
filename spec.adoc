@@ -1,20 +1,6 @@
 // Copyright 2024 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
-// Define titles and title logos for either Vulkan or Vulkan SC
-ifdef::VKSC_VERSION_1_0[]
-:DocTitle: Vulkan^®^ {SC} {revnumber} - A Specification {apititle} : Based on Vulkan {baserevnumber}
-:SC: SC
-:VulkanLogo: vulkansc-unscaled.svg
-:LogoDir: vulkansc
-endif::VKSC_VERSION_1_0[]
-ifndef::VKSC_VERSION_1_0[]
-:DocTitle: Vulkan^®^ {revnumber} - A Specification {apititle}
-:SC:
-:VulkanLogo: vulkan2-unscaled.svg
-:LogoDir: vulkan
-endif::VKSC_VERSION_1_0[]
-
 // :regtitle: is explained in
 // https://discuss.asciidoctor.org/How-to-add-markup-to-author-information-in-document-title-td6488.html
 
@@ -30,7 +16,7 @@ Jon Leech & Neil Trevett
 :rouge-style: github
 :docinfo: shared-header
 :docinfodir: {config}
-:title-logo-image: image:{images}/{KhronosLogo}[top="25%"]
+:title-logo-image: image:{images}/Khronos_RGB_June18.svg[top="25%"]
 :attribute-missing: warn
 
 // Various special / math symbols. This is easier to edit with than Unicode.
@@ -51,9 +37,13 @@ include::{chapters}/preamble.adoc[]
 
 include::{chapters}/introduction.adoc[]
 
+include::{chapters}/fundamentals.adoc[]
+
 include::{chapters}/licenses.adoc[]
 
 include::{chapters}/repostructure.adoc[]
+
+include::{chapters}/ci.adoc[]
 
 // Appendices
 :numbered!:
@@ -90,10 +80,10 @@ include::{appendices}/credits.adoc[]
 // Specification Markup & Authoring
 //     Choice of tools
 //         Legacy - Word, LaTeX
-//         Text Markup - Asciidoctor, Markdown
+//         Text Markup - Asciidoc, Markdown
 //             Simple use cases renderable from gitlab/github, but not in general
 //         Other - raw HTML
-//     Asciidoctor as Khronos default
+//     Asciidoc as Khronos default
 //     Basic Asciidoctor toolchain
 //         PDF / HTML options
 //         Images
@@ -109,9 +99,9 @@ include::{appendices}/credits.adoc[]
 // different aspects of "best practices" where having a working example to
 // refer to could help:
 //
-// WG is new to asciidoctor and needs help with basic markup / toolchain issues
+// WG is new to asciidoc and needs help with basic markup / toolchain issues
 // - how to they install and run the tools locally, how do they use Khronos
-// Docker images, where are the user guides for asciidoctor, and so on
+// Docker images, where are the user guides for asciidoc, and so on
 //
 // WG is out of date WRT licensing & copyright issues (which licenses to use,
 // how to express them in code, how to setup a CLA with James' assistance)

@@ -22,21 +22,19 @@ off in Notes like this one, where possible.
 This file, `README.adoc`, describes the overall purpose and structure of the
 repository, and is the first content that will be visible when viewing the
 repository on Github.
-It is written in "`Github-flavored asciidoctor`" markup, which is a limited
-subset of the link:https://asciidoctor.org[Asciidoctor] text markup
-language.
-Github and Khronos' internal Gitlab server both render asciidoctor markup,
-and we recommend using asciidoctor markup wherever possible in your
-own repository.
-Many Khronos Specifications are authored in asciidoctor, and assistance is
-available if you want to convert an existing specification or other document
-to asciidoctor format.
+It is written in "`Github-flavored asciidoc" markup, which is a limited
+subset of the link:https://asciidoctor.org[Asciidoc] text markup language.
+Github and Khronos' internal Gitlab server both render asciidoc markup, and
+we recommend using asciidoc markup wherever possible in your own repository.
+Many Khronos Specifications are authored in asciidoc format, and assistance
+is available if you want to convert an existing specification or other
+document to asciidoc format.
 
 [NOTE]
 .Note
 ====
 Markdown (`.md`) format may also be used for repository meta-information
-like this README, but markdown is more limited than asciidoctor, and we
+like this README, but markdown is more limited than asciidoc, and we
 recommend using the same markup format throughout the repository for
 consistency.
 ====
@@ -127,8 +125,9 @@ The primary target is typically a specification, but the section title
 should be changed for repositories with other or multiple purposes.
 ====
 
-The document sources are marked up in Asciidoctor format, and we use
-`asciidoctor` and related toolchain components to generate output documents.
+The document sources are marked up in asciidoc format, and we use
+`asciidoctor` and related toolchain components to generate output
+documents.
 See link:BUILD.adoc[BUILD.adoc] for more information on installing the
 toolchain and building the Specification.
 

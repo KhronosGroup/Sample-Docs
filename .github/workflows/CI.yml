@@ -1,0 +1,40 @@
+# Copyright 2024 The Khronos Group Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+# GitHub CI file for Sample-Docs spec generation
+# See .gitlab-ci.yml for non-Actions comments and step dependencies.
+
+name: CI
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or manual dispatch
+  push:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  # When a pull request is opened from a local branch or fork
+  pull_request:
+
+jobs:
+  license-check:
+    name: Verify repository license compliance
+    runs-on: ubuntu-latest
+    # We now refer to the container by its SHA instead of the name, to prevent
+    # caching problems when updating the image.
+    # container: khronosgroup/docker-images:asciidoctor-spec
+    container: khronosgroup/docker-images@sha256:42123ba13792c4e809d037b69152c2230ad97fbf43b677338075ab9c928ab6ed
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: REUSE license checker
+        run: reuse lint
+
+  spec-generate:
+    name: Build the specification and generate any associated files
+    runs-on: ubuntu-latest
+    container: khronosgroup/docker-images@sha256:42123ba13792c4e809d037b69152c2230ad97fbf43b677338075ab9c928ab6ed
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the actual spec (both PDF and HTML)
+        run: make html pdf

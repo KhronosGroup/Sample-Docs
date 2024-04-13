@@ -4,15 +4,16 @@
 [[fundamentals]]
 = Fundamentals
 
-This chapter introduces fundamental concepts for the Sample Repository.
+This chapter introduces fundamental concepts for the Sample Specification.
 
 [NOTE]
 .Note
 ====
-Refer to the link:{vkantora}/chapters.html[fundamentals section of the
-Vulkan Specification] for examples of concepts to describe in this chapter,
-such as ABIs, error codes, numeric representation, object models, threading
-behavior, and the validation model.
+Refer to the
+link:https://docs.vulkan.org/spec/latest/chapters/fundamentals.html[fundamentals
+section of the Vulkan Specification] for examples of concepts to describe in
+this chapter, such as ABIs, error codes, numeric representation, object
+models, threading behavior, and the validation model.
 
 Such descriptions will be specific to the implementation being specified,
 the environments it is designed to execute in, and the language(s)

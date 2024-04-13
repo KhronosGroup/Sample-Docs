@@ -6,7 +6,7 @@
 // and updates there should be reflected here.
 
 // Some sections of this license are optional and are selected by
-// asciidoctor attributes set when building specifications including this
+// asciidoc attributes set when building specifications including this
 // file.
 // Comments starting with NOTE: indicate that the following paragraph(s)
 // need to be modified to incorporate language suitable to the specification
@@ -35,7 +35,7 @@
 //   Set the :normative_spec_references: attribute and modify this section
 //   as described below if needed.
 
-// NOTE: asciidoctor attributes controlling inclusion of sections can be set
+// NOTE: asciidoc attributes controlling inclusion of sections can be set
 // here by uncommenting the appropriate lines, or on the asciidoctor command
 // line.
 
@@ -128,8 +128,8 @@ ifdef::normative_spec_wording[]
 The Khronos Intellectual Property Rights Policy defines the terms 'Scope',
 'Compliant Portion', and 'Necessary Patent Claims'.
 
-// NOTE: Replace the asciidoctor "xref-informative" xref below with the
-// anchor within this spec, and name of the section discussing informative
+// NOTE: Replace the asciidoc "xref-informative" xref below with the anchor
+// within this spec, and name of the section discussing informative
 // language.
 
 Some parts of this Specification are purely informative and so are EXCLUDED

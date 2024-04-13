@@ -3,3 +3,162 @@
 
 [[repostructure]]
 = Repository Structure
+
+The Sample-Docs repository can be used as a framework for new Khronos
+specification repositories, by forking and then modifying its contents as
+needed.
+
+This chapter discusses the content and structure of the repository.
+
+
+== Boilerplate Files
+
+All repositories should include the following files, which are open source
+conventions and directed primarily at external contributors who access the
+repository on GitHub.
+
+  * `README.adoc` - the first file seen when viewing a repository on gitlab
+    or GitHub.
+    It should describe the purpose of the repository; its high-level
+    structure and content (similarly to this section); and link to
+    `BUILD.adoc`.
+  * `BUILD.adoc` - describes in detail how to build the specification in the
+    repository.
+  * `COPYING.adoc` - describes all the licenses used in the repository, and
+    includes an FAQ discussing how the repository content can be used.
+  * `CONTRIBUTING.adoc` - describes the sorts of contributions and licenses
+    we can accept, and the Contributor License Agreement.
+  * `CODE_OF_CONDUCT.adoc` - Khronos Code of Conduct for participating in
+    our open source projects.
+  * `LICENSE.adoc` - briefly enumerates all the licenses used in the
+    repository.
+    This is somewhat duplicative of `COPYING.adoc` and the `LICENSES`
+    directory, which is unavoidable since those files serve different
+    purposes.
+  * `LICENSES/` - contains the complete and unmodified text of all licenses
+    used in the repository.
+    See <<licenses-documenting, Documenting Licenses>>.
+  * ChangeLog.adoc - the repository change log.
+    Typically used to summarizes changes between public updates of a
+    specification, and intended as a more readable version of the git commit
+    history.
+
+
+== Specification Files
+
+Specification markup source in asciidoc format is by convention structured
+as follows:
+
+  * `Makefile` (or other build script) to build the specification artifacts.
+    Normally the Makefile specifies targets (such as `html` or `pdf`) and
+    options to invoke asciidoctor with for each target.
+    The Sample-Docs repository's `Makefile` is considerably more complex
+    than strictly required, since it is intended as an example for use with
+    actual specifications that will themselves be much more complex than the
+    Sample-Docs specification.
+  * `spec.adoc` (or `__apiname__.adoc` or other meaningful title) -
+    top-level specification markup file, which specifies the document
+    headers and includes separate files for chapters and appendices.
+  * `chapters/` - directory containing individual asciidoc files
+    corresponding to individual chapters of the specification.
+    Most specifications will need at least the following files, which can be
+    modified starting from the examples in the Sample-Docs repository:
+  ** `chapters/preamble.adoc` - includes the Khronos Specification Copyright
+     License applied to the specification artifacts.
+  ** `chapters/introduction.adoc` - first chapter of the specification,
+     defining what the specification is for and what it contains.
+  ** `chapters/fundamentals.adoc` - second chapter of the specification,
+     defining fundamental concepts needed by the remainder of the document.
+  ** Additional chapters as relevant.
+     For example, the Sample-Docs repository contains
+     `chapters/licenses.adoc` and `chapters/repostructure.adoc` (which is
+     the markup file for this chapter).
+  * `appendices/` - directory containing individual asciidoc files
+    corresponding to individual appendices of the specification.
+    This is purely a notational convenience.
+    Appendices could be placed in the `chapters/` directory instead.
+  ** `appendices/lexicon.adoc` - used by most specifications to contain a
+     glossary and other lexicon material.
+  ** `appendices/credits.adoc` - where individual contributors to a
+     specification are acknowledged, including the Khronos staff who support
+     our work.
+  * `images/` - directory containing SVG images included in the
+    specification.
+    The Sample-Docs repository contains a single image:
+  ** `images/Khronos_RGB_June18.svg` - Khronos logo included
+     on the title page of the generated PDF artifact.
+
+
+== Configuration Files
+
+The build toolchain for asciidoc-based specs used in the Sample-Docs
+repository includes a variety of build tools and configuration files as
+examples:
+
+
+=== License Markup Files
+
+  * `config/copyright-ccby.adoc` - CC-BY-4.0 copyright file for
+    inclusion in published specification artifacts.
+    Used in the Sample-Docs repository as this specification is neither
+    ratified nor contains IP, but actual specifications will normally use:
+  * `config/copyright-spec.adoc` - Khronos Specification Copyright License
+    file for inclusion in published specification artifacts.
+    When using this file, please read it carefully to set asciidoc
+    attributes controlling which sections are included, and to modify
+    sections as appropriate for your specification.
+
+
+=== Helper Markup Files
+
+  * `config/attribs.adoc` defines asciidoc attributes for (mostly) math
+    symbols, corresponding to LaTeX math operators.
+    For example, you can write pass:[`{sqrt} {pi}`] for `{sqrt} {pi}` and
+    similar simple math markup.
+
+
+=== Asciidoctor Extensions
+
+Asciidoctor (the Ruby implementation of the asciidoc markup language) can be
+extended, and many extensions are available.
+Some of our specifications, such as OpenXR and Vulkan, rely on extensions.
+Others use only unextended asciidoc markup.
+
+Two simple extension, added to the build in the `Makefile`, are:
+
+  * `config/asciidoctor_mathematical.rb` - allows using [latexmath] blocks
+    inside asciidoc table cells.
+  * `config/open_listing_block.rb` - allows a listing block to masquerade as
+    an open block, allowing open block nesting as in the following example.
+
+[open]
+.Open Block Nesting Example
+--
+This is an asciidoc open block.
+Normally open blocks cannot contain other open blocks.
+
+[open]
+----
+The outer open block contains a nested open block, which is enabled by the
+open_listing_block extension.
+----
+--
+
+
+=== CSS Style File for HTML Output
+
+  * `config/khronos.css` is a slightly modified version of the standard
+    asciidoctor "`colony`" theme included in HTML artifacts.
+    We encourage using this CSS for consistency with other Khronos
+    specifications.
+
+
+=== Helper Scripts
+
+Most scripts should be kept under a `scripts/` subdirectory in the
+repository, but for ease of use we provide one script at the top level:
+
+  * `runDocker` invokes the Khronos `asciidoctor-spec` Docker image.
+  * <<ci, Continuous Integration>> scripts used for specification builds:
+  ** `.gitlab-ci.yml` - Gitlab CI script
+  ** `.github/workflows/CI.yml` - Github CI script

@@ -185,6 +185,8 @@ requirements, either as a whole or in part.
 The following documents are referenced by normative sections of the
 specification:
 
+TODO Use relevant actual references here (asciidoc user guide, SPDX website, etc.)
+
 [[spdx]]
 IEEE.
 August, 2008.
