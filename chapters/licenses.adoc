@@ -111,7 +111,6 @@ Examples using the default licenses are:
 <registry>
     <comment>
 Copyright 2015-2024 The Khronos Group Inc.
-
 SPDX-License-{empty}Identifier: Apache-2.0 OR MIT
     </comment>
 ...
@@ -212,8 +211,8 @@ An example of the syntax of the `dep5` file for a file or group of files is:
 [source]
 ----
 
-Files: config/optimize-pdf
-Copyright: 2014-2016 OpenDevise Inc. and the Asciidoctor Project
+Files: config/khronos.css
+Copyright: 2013 Dan Allen
 License: MIT
 ----
 
@@ -348,4 +347,22 @@ artifacts, as well as the input markup files.
 ====
 TODO Can we do away with the "`Khronos Document Copyright Licenses`"
 entirely in favor of CC-BY?
+====
+
+
+== Confidential Repository Notice
+
+The following notice *must* be placed in any repository covered by the
+Khronos NDA:
+
+[source,txt]
+----
+include::{config}/ConfidentialRepositoryNoticeApr18.txt[]
+----
+
+[NOTE]
+.Note
+====
+The source of this Notice is in the
+link:https://members.khronos.org/wg/General/document/938[member file area].
 ====

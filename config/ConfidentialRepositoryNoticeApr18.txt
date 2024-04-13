@@ -1,0 +1,5 @@
+CONFIDENTIALITY NOTICE
+
+Unless and until publicly released by Khronos, all material in this repository is CONFIDENTIAL INFORMATION of Khronos. Confidentiality obligations supersede any conflicting rights granted under any license terms associated with the material. Once publicly released, the material is no longer confidential information, and the applicable license terms fully govern use of the material.  
+
+The confidentiality obligation described in this notice does not limit any party's right to use and disclose that party's own material at its own discretion.       

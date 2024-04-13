@@ -25,14 +25,17 @@ The Sample-Repo project uses several licenses.
 * Header files, scripts, programs, XML files, and other tooling used or
   generated as part of the build process are typically licensed under the
   Apache License, Version 2.0 (SPDX license identifier "`Apache-2.0`").
-* For compatibility with external developers working in GPLed projects who
-  have requested it, some specific files are licensed under a dual (SPDX
-  license identifier "`Apache-2.0 OR MIT`" License).
 * There are a few remaining files adopted from other open source projects,
-  such as the `optimize-pdf` script and a copy of the KaTeX distribution
-  files. Such files continue under their original MIT licenses.
+  such as `config/khronos.css` script and a copy of the KaTeX distribution
+  files.
+  Such files continue under their original MIT licenses.
   We have not added SPDX license identifiers to such externally originated
-  files. Instead, they are tagged in the `.reuse/dep5` file.
+  files.
+  Instead, they are tagged in the `.reuse/dep5` file.
+* For compatibility with external developers working in LGPLed projects who
+  have requested it, some specific files can be licensed under a dual (SPDX
+  license identifier "`Apache-2.0 OR MIT`" License).
+  No such files are in this repository at present.
 
 Users outside Khronos who create and post specifications from this
 repository, whether modified or not, should use the CC-BY-4.0 license on the

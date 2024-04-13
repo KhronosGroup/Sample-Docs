@@ -52,6 +52,10 @@ include::{appendices}/lexicon.adoc[]
 
 include::{appendices}/credits.adoc[]
 
+// Specific TODOs
+// Vendor Extension Header Template
+// Non-member contribution guidelines
+// License Flows PPT
 
 // Repository Licensing
 //     License Choices & Defaults
