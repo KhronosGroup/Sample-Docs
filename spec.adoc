@@ -43,7 +43,11 @@ include::{chapters}/licenses.adoc[]
 
 include::{chapters}/repostructure.adoc[]
 
+include::{chapters}/repomanagement.adoc[]
+
 include::{chapters}/ci.adoc[]
+
+include::{chapters}/asciidoc.adoc[]
 
 // Appendices
 :numbered!:
@@ -56,49 +60,9 @@ include::{appendices}/credits.adoc[]
 // Vendor Extension Header Template
 // Non-member contribution guidelines
 // License Flows PPT
+// https://members.khronos.org/wg/General/document/935 - Specification and
+//  Guidelines License Flows
 
-// Repository Licensing
-//     License Choices & Defaults
-//         Proprietary spec license on ratified specs only
-//     REUSE compliance
-// Repository Structure
-//     Boilerplate files & Contents
-// Continuous Integration
-//     Gitlab CI / Github Actions
-//         REUSE compliance
-//     Docker images, Khronos & other
-// Github / Gitlab coexistence
-//     Are both private & public repos needed?
-//     Keeping repos synced
-//     Keeping private content private (tags, commits, etc.)
-// Github Management
-//     CLA deployment
-//     Public issue / PR responsiveness
-//         Open issue
-// Publication Strategies
-//     When to publish
-//     Generating PDF / HTML artifacts
-//     In repository - only for simple markdown
-//     In registries
-//
-// Specification Markup & Authoring
-//     Choice of tools
-//         Legacy - Word, LaTeX
-//         Text Markup - Asciidoc, Markdown
-//             Simple use cases renderable from gitlab/github, but not in general
-//         Other - raw HTML
-//     Asciidoc as Khronos default
-//     Basic Asciidoctor toolchain
-//         PDF / HTML options
-//         Images
-//         Math
-//         Khronos default or custom Docker images
-//     Custom Macros - Ruby extensions & offline processing
-//     Complex toolchain w/API XML - refer to Vulkan / OpenXR
-//         May be useful for C APIs
-//         Talk to Jon / Ryan
-//
-//
 // I'm not sure that help would make it go faster, but there are a couple of
 // different aspects of "best practices" where having a working example to
 // refer to could help:

@@ -1,0 +1,207 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+[[asciidoc-markup]]
+= Asciidoc Markup for Authoring
+
+Khronos has moved to asciidoc markup format for new specifications, and
+migrated many older specifications as well.
+Asciidoc is a powerful and expressive markup language with a large ecosystem
+of tooling and extensions built around it.
+We strongly recommend all new specifications be written in asciidoc.
+
+There are many paths when authoring in asciidoc, from simple to more complex
+use cases.
+These are briefly discussed below.
+
+[NOTE]
+.Note
+====
+This document does not discuss asciidoc markup itself, only how it is used
+in the Khronos context.
+For new authors, see the
+link:https://docs.asciidoctor.org/asciidoc/latest[asciidoc documentation]
+for user guides and other material.
+For the most part, following the example of this specification will suffice.
+====
+
+[NOTE]
+.Note
+====
+TODO: Need discussion of math markup / rendering and the KaTeX
+toolchain.
+====
+
+
+[[asciidoc-github]]
+== Simplest: GitHub-Flavored Asciidoc
+
+GitHub supports a subset of asciidoc features, referred to as
+"`GitHub-Flavored Asciidoc`" or GFA.
+Gitlab supports similar functionality.
+
+GFA is suitable for writing short, single-file markup such as the
+link:{specrepofiles}/README.adoc[README.adoc] in the Sample-Docs repository.
+We do not recommend it for longer documents, such as complete
+specifications.
+
+Advantages of GFA are:
+
+  * Renders directly in the brower's view of the file on github, without
+    need for offline processing.
+
+Disadvantages of GFA are:
+
+  * Does not support important core asciidoc functionality, particularly
+    include directives needed to construct multi-file projects.
+  * Does not support extensions and plugins, which limits math rendering,
+    images, and any project-specific functionality your specification might
+    want to use.
+  * Does not support user-defined CSS and styles.
+  * Cannot generate PDF, only live HTML views.
+
+
+[[asciidoctor-unextended]]
+== Intermediate: Unextended Asciidoctor
+
+There are several implementations of processors for the asciidoc _markup
+language_.
+The most commonly used processor in Khronos repositories is
+link:https://docs.asciidoctor.org/asciidoctor/latest/[Asciidoctor], which is
+a command-line tool written in Ruby.
+There are also JavaScript (Asciidoctor.js) and Java (AsciidoctorJ)
+implementations, which are versions of Asciidoctor translated or virtualized
+to run with those languages.
+
+Out of the box, Asciidoctor is flexible enough for many specifications, with
+no need for extensions or plugins.
+This is the simplest way to use Asciidoctor, although your specification
+will still need to do configuration work.
+The Sample-Docs specification is largely written in unextended Asciidoctor,
+although it does include a few small extensions as examples.
+
+Advantages of unextended Asciidoctor are:
+
+  * Simplest offline processing tool.
+  * Supports the full asciidoc markup language.
+  * Can generate HTML, PDF (with the asciidoctor-pdf gem), EPUB, and other
+    formats.
+  * Supports high-quality math rendering using KaTeX (recommended for
+    performance reasons) or MathJax.
+  * Enables project-specific document styles (such as the
+    `config/khronos.css` used in the Sample-Docs specification).
+  * Supports plugin syntax highlighters for markup of included code samples.
+  * Can always be extended later, if needed.
+
+Disadvantages of GFA are:
+
+  * Using extensions opens up additional input file format support, markup
+    syntax, semantic tagging, and anything else you can imagine writing a
+    markup extension for.
+
+
+[[asciidoctor-extended]]
+== Most Complex: Asciidoctor with Extensions
+
+Many features such as PDF generation are in fact Asciidoctor extensions,
+but this is largely irrelevant to the users.
+However, as a specification grows, it may be desirable to write _custom
+extensions_ to modify the behavior of the underlying asciidoc processor.
+The Vulkan and OpenXR specifications, in particular, use a large number
+of custom extensions for many purposes, including but not limited to:
+
+  * Extended markup language features for convenience (such as the
+    `config/open_listing_block.rb` example found in the Sample-Docs
+    repository).
+  * Semantic markup of API names, which can vary their rendering depending
+    on the context.
+    For example, Vulkan and OpenXR both extract reference pages from their
+    specifications, and rendering the same API name markup in a reference
+    page and result in a different outbound link (to another reference page,
+    instead of within the single-document specification).
+  * Special processing of markup.
+    For example, Vulkan includes _valid usage (VU) statements_ which are
+    specially tagged and are extracted from the specification at built time,
+    resulting in a JSON database of VUs which is then passed to downstream
+    tools such as the Vulkan Validation Layers to assist in writing tests
+    for the VUs.
+
+Advantages of extended Asciidoctor are:
+
+  * Greatest flexibility.
+  * Can work around issues with Asciidoctor that are important to our
+    documents, but the developers have not prioritized yet.
+  * Allows compact and semantically meaningful markup of important bits of a
+    document that need special handling for the API or language being
+    specified.
+
+Disadvantages of GFA are:
+
+  * Requires learning a small amount Ruby, and about Asciidoctor
+    internals.
+    Their internal documentation has been improving, but you may still in
+    some cases need to ask questions on the Asciidoctor support forum, or
+    read the Asciidoctor code.
+  * Requires defining new markup constructs, and educating contributors to
+    your project to use them.
+
+
+[[antora]]
+== On the Horizon: Antora Site Generation
+
+link:https://docs.antora.org/antora/latest/[Antora] is a site generation
+tool for content written in asciidoctor.
+It is written in Javascript and uses the Asciidoctor.js implementation of
+Asciidoctor.
+Antora is written and supported by the same developers who are responsible
+for Asciidoc and Asciidoctor, and reasonably widely used already.
+
+Antora produces a static HTML website from one or more asciidoctor
+"`components`" (which roughly correspond to specifications or other
+standalone document groups).
+It supports sitewide indexing, linking, presentation, and search of those
+components.
+
+The link:https://docs.vulkan.org/[Vulkan Documentation Website]
+is Khronos' first step into Antora.
+Over time we expect more Khronos specifications will move into Antora
+format, but are still learning, and are not ready to recommend Antora for
+general use yet.
+
+Advantages of Antora:
+
+  * Enables unified documentation websites combining specifications,
+    tutorials, user guides, examples, and other material relevant to an
+    ecosystem.
+  * Decent site-wide search using the Lunr extension.
+  * Detailed control of the site UI and styles is possible.
+
+Disadvantages of Antora:
+
+  * Must generate and publish a complete static HTML website, not just a
+    single HTML or PDF file.
+  * More complicated document setup, with significant restrictions
+    around the structure of files.
+  * A different syntax for intra-document links that makes it difficult to
+    write markup that will enable versions of the same specification to be
+    built with either Antora or Asciidoctor.
+  * Using custom asciidoctor extensions written in Ruby requires either
+    translating them to Javascript using a complex toolchain, or learning
+    both Javascript and Ruby, and the somewhat different ways the
+    Asciidoctor internal APIs are used from them.
+
+The different link markup conventions used by Antora were a significant
+barrier to Vulkan, which cannot easily, or soon abandon the
+Asciidoctor-generated specifications we publish in the Registry.
+In an attempt to alleviate this issue, we wrote a series of scripts which
+transform Vulkan specification markup into an Antora-friendly form.
+When combined with Asciidoctor.js extensions which interpret
+the semantic markup of the Vulkan specification appropriately
+for Antora, this has enabled us to support both formats.
+
+Unfortunately, the Vulkan approach is specific to the rigid style guidelines
+and the extended semantic markup conventions of that specification, and will
+require considerable adaptation to be used in other specifications.
+
+We hope to have better answers and strategies for Antora migration in the
+relatively near future.

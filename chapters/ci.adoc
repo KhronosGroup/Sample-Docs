@@ -21,7 +21,7 @@ recommendation away from Actions, or start self-hosting Actions runners.
 ====
 
 
-[[ci-jobs]
+[[ci-jobs]]
 == Sample CI Scripts and Jobs
 
 Gitlab and GitHub Actions CI scripts are both YAML format files, but the

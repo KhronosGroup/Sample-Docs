@@ -210,6 +210,9 @@ An example of the syntax of the `dep5` file for a file or group of files is:
 
 [source]
 ----
+Files: images/*.svg
+Copyright: 2015-2024 The Khronos Group Inc.
+License: CC-BY-4.0
 
 Files: config/khronos.css
 Copyright: 2013 Dan Allen
@@ -220,8 +223,9 @@ The `Files:` line contains the whitespace-separated names of one or more
 files in the repository.
 Wildcards are allowed.
 
-The `Copyright` line contains the copyright statement normally already
-present in those files, and should be copied verbatim.
+The `Copyright` line contains the copyright statement for those files.
+If there is already a copyright statement in the file without a
+corresponding license, it should be copied verbatim.
 
 The `License` line contains the SPDX license identifier of those files.
 

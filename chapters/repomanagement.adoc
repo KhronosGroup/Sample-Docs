@@ -1,0 +1,218 @@
+// Copyright 2024 The Khronos Group Inc.
+// SPDX-License-Identifier: CC-BY-4.0
+
+[[repository-management]]
+= Repository Management
+
+This chapter is not prescriptive, but describes issues actual specification
+repositories may encounter, and some guidelinse for dealing with them.
+
+Exceptions to most of these guidelines exist, and can be discussed with Neil
+Trevett and the Khronos Board of Promoters.
+
+
+== Private and Public Repositories
+
+Khronos tries to make as much of our material open source as possible.
+The constraints of the IP agreements mean that most Khronos-approved
+specifications are initially developed internally to Khronos, and only
+published after ratification.
+
+To meet both needs, there are usually two specification repositories: a
+private version in Khronos' gitlab server, and a public version in the
+KhronosGroup organization on github.com.
+This allows internal IP-sensitive development to take place while at the
+same time, public issues and pull requests can be done for already published
+versions of specifications.
+
+
+== Repository Creation and Naming
+
+New specifications are kept in repositories called `**Name**-Docs` where
+`**Name**` is the name of the API or Language being specified.
+
+In internal gitlab, there is a hierarchy consisting of a gitlab _group_
+containing multiple _projects_.
+A group corresponds to a Khronos Working Group, and a project to a git
+repository with associate gitlab issue tracker, merge request manager, CI
+configuration, and so on.
+For example, the `Sample` group contains the `Sample-Docs` project, which
+includes the repository defining the `Sample-Docs` specification.
+It exists at URL
+
+https://gitlab.khronos.org/sample/sample-docs
+
+In GitHub, all Khronos repositories are in a GitHub _organization_ named
+`KhronosGroup`, with no further hierarchy possible.
+
+A gitlab project name corresponds to a GitHub repository name.
+We avoid name collisions on GitHub by using the gitlab project name as the
+first part of the GitHub repository name, and using the GitHub repository
+name on both gitlab and GitHub.
+
+[NOTE]
+.Note
+====
+For example, there are multiple repositories for projects associated with
+the Vulkan API, such as
+
+  * `KhronosGroup/Vulkan-Docs`
+  * `KhronosGroup/Vulkan-Loader`
+  * `KhronosGroup/Vulkan-Tools`
+====
+
+Thus, the Sample-Docs repository on GitHub is at URL
+
+https://github.com/KhronosGroup/Sample-Docs
+
+[NOTE]
+.Note
+====
+There is no hard requirement that corresponding repositories in gitlab and
+GitHub must be named the same.
+For example, the gitlab group and project name for the Vulkan specification
+are both `vulkan`, while the GitHub organization and repository name are
+`KhronosGroup` and `Vulkan-Docs` respectively.
+
+However, with the benefit of hindsight, it is better to use project and
+repository names that are as similar as possible.
+====
+
+Creating and configuring new groups, projects, and repositories is beyond
+the scope of this document, and requires administrative privileges most
+Khronos members do not have.
+Please email mailto:memberservices@khronos.org[Member Services]
+for assistance.
+Once created, designated owners and administrators should be granted
+privileges sufficient for day-to-day upkeep of repositories.
+
+
+== Synchronizing Repositories
+
+It is important to keep gitlab and GitHub repositories synchronized.
+Most changes, including bugfixes new versions and extensions of
+specifications, are made on gitlab and propagated to GitHub after
+ratification.
+However, there is often feedback and changes proposed on GitHub by external
+developers using a specification.
+
+It is easiest to keep repositories synchronized if they share the same
+commit history.
+Initially, this can be accomplished by creating a repository clone with
+multiple _upstreams_ for gitlab and github, and pushing the same branch(es)
+in the local clone to both upstreams.
+
+The specification editor's responsibilities include pushing changes from
+gitlab to github when publishing specification updates developed internally,
+and pushing from github to gitlab when accepting public feedback.
+There are many ways of using git to accomplish this, such as cherry-picking
+git commits, git merges, or even simple-minded `diff` / `git apply`.
+If unsure how to proceed, you can always ask for advice on the Working Group
+Chairs mailing list.
+
+It is easy to accidentally leak internal material when synchronizing with
+GitHub, so it's wise to develop strategies and automatic mechanisms to
+reduce this risk.
+For example, pushing a git tag from one repository to another can carry the
+entire git history of that tag with it.
+
+
+== Managing Community Interaction
+
+Feedback and pull requests from external developers have been very valuable,
+both for the improvements they represent and for the sense of engagement
+with and responsiveness by Khronos developers they can result in.
+Working Groups should have a process for monitoring and managing GitHub
+activity from external developers.
+
+External contributions can also pose IP risks and consume considerable
+Working Group time on relatively minor matters.
+Working Group chairs should be aware of these risks and manage time spent on
+GitHub issues accordingly.
+
+We do not want our public specification repositories to turn into technical
+support forums for programming problems, driver issues, and so on.
+We encourage external developers to use Khronos Discord or vendor-specific
+forums, where they are also more likely to get good and timely answers, for
+such questions.
+
+
+== Publication Strategies
+
+Working Groups should agree on when to _publish_ changes in their
+repositories.
+In one sense every commit pushed to a public GitHub repository is
+"`published`", but the sense we mean this is of generating and releasing
+specification artifacts corresponding to a particular point in the commit
+history.
+This can be done for a new core API version, a new language extension, or
+just for a collection of bugfixes and clarifications.
+
+Working Groups will normally go through a process like:
+
+  * Agree on what set of changes to release and publish; why; and what to
+    call the resulting artifacts.
+  * Synchronize gitlab and GitHub repositories, then merge all relevant
+    internal changes to the default branch.
+  * Tag the resulting "`release`" appropriately.
+    Semantic versioning names are often appropriate as git tag names.
+  * Generate specification artifacts corresponding to the release.
+  * Synchronize the default branch at the tag point back to GitHub.
+  * Publish the artifacts in the Khronos Registry.
+  * Make announcements if appropriate, on the Khronos website, Discord, or
+    other channels.
+
+
+=== The Khronos Registry
+
+Most Khronos specifications are published in the
+link:https://registry.khronos.org/[Khronos Registry].
+This is a Khronos website containing multiple sections, one for each Working
+Group using it.
+Each section is backed by a corresponding GitHub repository which contains
+artifacts such as HTML and PDF files.
+
+[NOTE]
+.Note
+====
+For example, the OpenCL Working Group maintains their pnublished
+specification source in the
+link:https://www.github.com/KhronosGroup/OpenCL-Docs[OpenCL-Docs] repository
+on GitHub.
+
+Artifacts generated from the specification repository are published in the
+corresponding
+link:https://www.github.com/KhronosGroup/OpenCL-Registry[OpenCL-Registry]
+repository.
+====
+
+The registry repositories are only a means of publication.
+GitHub cannot directly host HTML files - they can be downloaded, but not
+viewed at a www.github.com repository URL.
+The registry website automatically pulls updates pushed to the various
+registry repositories.
+
+[NOTE]
+.Note
+====
+We do not keep specification artifacts in the specification repositories as
+such generated files can very rapidly build up, consuming large amounts of
+space.
+====
+
+[NOTE]
+.Note
+====
+There are other ways of publishing artifacts, including:
+
+  * GitHub Pages, which can publish artifacts generated in GitHub Actions
+    CI.
+  * In some cases, specifications are so simple that they can be written
+    entirely in GitHub-flavored asciidoc markup, which is a subset of
+    asciidoc markup, and viewed directly on the specification repository.
+    This is usually only suitable for short, single-file documents.
+
+Other approaches have pros and cons compared to the registry.
+We think the registry is the best publishing approach for most
+specifications.
+====
