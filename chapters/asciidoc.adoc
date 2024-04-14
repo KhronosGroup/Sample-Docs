@@ -186,7 +186,7 @@ Disadvantages of Antora:
     write markup that will enable versions of the same specification to be
     built with either Antora or Asciidoctor.
   * Using custom asciidoctor extensions written in Ruby requires either
-    translating them to Javascript using a complex toolchain, or learning
+    translating them to Javascript using a complex toolchain; or learning
     both Javascript and Ruby, and the somewhat different ways the
     Asciidoctor internal APIs are used from them.
 
