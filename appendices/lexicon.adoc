@@ -15,7 +15,19 @@ Specification.
 == Glossary
 
 The terms defined in this section are used consistently throughout the
-Specification and may be used with or without capitalization.
+Specification and may be used with or without capitalization, although
+proper nouns such as "`Khronos`" should always be capitalized.
+
+[[khronos-specification]]
+Khronos Specification::
+    A specification document authored and published by the Khronos Group,
+    defining an API, language, or other standard.
+
+[[sample-specification]]
+Sample Specification::
+    This document.
+    A reference and guide to writing an actual <<khronos-specification,
+    Khronos specification>>, but not itself a Khronos specification.
 
 SPDX::
     The Software Package Data Exchange, which defines conventions and

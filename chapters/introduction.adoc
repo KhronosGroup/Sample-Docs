@@ -5,10 +5,11 @@
 [[introduction]]
 = Introduction
 
-This document, referred to as the "`Sample Specification`" or just the
-"`Specification`" hereafter, is a reference for creating repositories
-containing new Khronos API or language specifications, referred to as
-"`Khronos specifications`" hereafter.
+This document, referred to as the <<sample-specification, _Sample
+Specification_>> or just the "`Specification`" hereafter, is a reference for
+creating repositories containing new Khronos API or language specifications,
+referred to as <<khronos-specification, _Khronos specifications_>>
+hereafter.
 
 The Sample Specification is not, itself, a ratified Khronos product.
 Its purpose is to
