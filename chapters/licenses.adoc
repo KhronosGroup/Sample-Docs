@@ -4,8 +4,8 @@
 [[licenses]]
 = Licenses and Contributor License Agreements
 
-All content in a Khronos specification must be licensed.
-This chapter discusses
+All content in a Khronos specification *must* be licensed.
+This chapter covers:
 
   * <<licenses-choices, Choice of license>>
   * <<licenses-copyright, How to include a license in a file>>
@@ -33,7 +33,7 @@ The Khronos default licenses for specifications are:
   * Source code such as build scripts and example code is under the
     link:htps://www.apache.org/licenses/LICENSE-2.0[Apache 2.0 License].
   * When there is a compelling requirement for source code to be usable in a
-    downstream LGPL project, the Working Group can approve a *dual license*
+    downstream LGPL project, the Working Group can approve a _dual license_
     on specific files, so that they can also be used under an
     LGPL-compatibile MIT License.
     Please consult with Neil Trevett before taking this step.
@@ -61,9 +61,9 @@ Please do not modify an existing open source license, or create a new one.
 [[licenses-copyright]]
 == Including a License and Copyright Statement in a File
 
-Every Khronos-authored file must have an associated copyright statement,
-including both the copyright (author and dates) and the _SPDX License
-Identifier_ of the license applying to that file.
+Every Khronos-authored file *must* have an associated copyright statement,
+including both the copyright (author and dates) and the <<spdx-id-table,
+_SPDX License Identifier_>> of the license applying to that file.
 
 In most cases, the copyright statement is included as a comment at the
 earliest possible syntactically valid place in the file.
@@ -123,17 +123,19 @@ SPDX-License-{empty}Identifier: Apache-2.0 OR MIT
 [[licenses-implicit]]
 === Licenses for Unmodifiable or Externally Sourced Files
 
-There are two cases where you may not be able to include an explicit
+There are some cases where you may not be able to include an explicit
 copyright statement in the format described above:
 
-  . _Unmodifiable_ files need not have an explicit copyright statement
-    included if their file format does not support it easily.
+  . _Unmodifiable_ files need not have an explicit license statement
+    included if their file format does not support it easily, or if the
+    REUSE tool does not know how to extract the license from the file
+    metadata.
     Examples include image and raw binary data files.
   . _Externally Sourced_ files come from other open source projects.
     One example is a script that is used in our build toolchain with slight
     modifications.
-    Such files must have an open source license that is compatible with the
-    Khronos licenses for the purposes they are required for.
+    Such files *must* have an open source license that is compatible with
+    the Khronos licenses for the purposes they are required for.
     However, the way in which these licenses are specified may be different,
     such as including the complete license text in their copyright header,
     or implcitly using the LICENSE file of their source repository to apply
@@ -152,31 +154,32 @@ described below for the <<licenses-reuse, REUSE>> tool.
 The full and unmodified license text for each license used in the repository
 *must* be included in the `LICENSES` directory.
 Every license uses *must* have a corresponding SPDX license identifier.
-The sample repository already includes the following licenses, which
-cover most use cases:
+The sample repository already includes the following licenses, which cover
+most use cases:
 
+[[spdx-id-table]]
 .Licenses in the Sample Specification Repository
 [options="header"]
 |====
 | SPDX License Identifier | Filename | Description
-| Apache-2.0
+| `Apache-2.0`
     | `LICENSES/Apache-2.0.txt`
     | Apache 2.0
-| CC-BY-4.0
+| `CC-BY-4.0`
     | `LICENSES/CC-BY-4.0.txt`
     | Creative Commons Attribution 4.0
-| LicenseRef-KhronosSpecCopyright
+| `LicenseRef-KhronosSpecCopyright`
     | `LICENSES/LicenseRef-KhronosSpecCopyright.adoc`
     | Khronos Specification Copyright License
-| MIT
+| `MIT`
     | `LICENSES/MIT.txt`
-    | MIT Licenses
+    | MIT License
 |====
 
 If you need license text and SPDX license identifiers for other open source
 licenses, obtain them from another Khronos repository already using those
-licenses, or from the
-link:https://spdx.dev/learn/handling-license-info/[SPDX website].
+licenses, or from the <<spdx-licenses, SPDX License List>> on the SPDX
+website.
 
 If you need to use a license not found on the SPDX website, please talk with
 Jon Leech and Neil Trevett first.
@@ -192,12 +195,11 @@ licenses.
 [[licenses-reuse]]
 === License Verification With REUSE
 
-The link:https://reuse.software/[REUSE] tool is used in <<ci-reuse,
-Continuous Integration>> to guarantee that all files in the sample
-repository are appropriately licensed.
+The <<reuse, REUSE>> tool is used in <<ci-reuse, Continuous Integration>> to
+guarantee that all files in this repository are appropriately licensed.
 
-REUSE is a tool that verifies that every file in the repository has a
-license, and that every license is included in the `LICENSES` directory.
+REUSE verifies that every file in the repository has a license, and that
+every license is included in the `LICENSES` directory.
 
 Please make certain that you include the REUSE <<ci-jobs, `license-check` CI
 job>> in any new repositories.
@@ -207,10 +209,10 @@ job>> in any new repositories.
 
 Files that do not and cannot have explicit license information included,
 such as the <<licenses-implicit, Licenses for Unmodifiable or Externally
-Sourced Files>> discussed above, must have their licenses documented in the
-file `.reuse/dep5`.
+Sourced Files>> discussed above, *must* have their licenses documented in
+the file `.reuse/dep5`.
 
-An example of the syntax of the `dep5` file for a file or group of files is:
+Some examples of the `dep5` syntax for a file or group of files are:
 
 [source]
 ----
@@ -240,14 +242,14 @@ When a filename is repeated in `dep5` with incompatible licenses, behavior
 is unpredictable.
 
 REUSE has other useful functionality, such as generating a license manifest,
-that spec editors may find useful.
+that Working Groups may find useful.
 
 
 [[licenses-cla]]
 == Contributor License Agreements
 
-Every contribution to Khronos repositories must be appropriately licensed by
-its author.
+Every contribution to Khronos repositories *must* be appropriately licensed
+by its author.
 This is ensured by _Contributor License Agreements_ and (for Khronos members
 who make contributions) by the Khronos member agreements and IP policies.
 
@@ -259,7 +261,8 @@ Khronos members may edit their designated employees in Schedule A by
 emailing mailto:memberservices@khronos.org[Member Services].
 
 Additionally, CLAs are integrated into our GitHub repositories such that all
-contributors must agree to the CLA before their pull requests can be merged.
+contributors *must* agree to the CLA before their pull requests can be
+merged.
 There are several possible CLAs that can be configured, depending on the
 nature of the repository:
 
@@ -296,18 +299,32 @@ mailto:webservices@khronosgroup.org[James Riordon].
 == Licenses for Ratified and Non-Ratified Specification Artifacts
 
 When creating a specification, asciidoc (or other markup) files are
-converted into an HTML or PDF form more suitable for viewing in a web
+converted into HTML and/or PDF form more suitable for viewing in a web
 browser.
 
 These HTML or PDF files are referred to here as "`specification artifacts`"
 or simply "`artifacts`".
+
+[NOTE]
+.Note
+====
+Historically we have published both HTML and PDF artifacts for our
+specifications.
+PDF artifacts can become very large and have limited use cases but more
+readily support downloading for offline use, which some people appreciate.
+
+Carefully consider which artifacts you wish to publish.
+It is difficult to withdraw a particular specification format you have
+published in the past, and easy not to publish that format in the first
+place.
+====
 
 Specification artifacts can be submitted to the Khronos Board of Promoters
 for ratification.
 Artifacts, whether ratified or not, can be published in the Khronos Registry
 for public consumption.
 
-In either case, artifacts must be placed under a form of the
+In either case, artifacts *must* be placed under a form of the
 link:{specrepofiles}/config/copyright-spec.adoc[Khronos Specification
 Copyright License].
 By setting appropriate asciidoc attributes, this license can be used for
@@ -347,7 +364,7 @@ select appropriate parts of the license.
 === Licenses for Other Published Artifacts
 
 For a document which is not a specification requiring ratification or with
-IP concerns, including this "`Sample Specification`" itself, you may use the
+IP concerns, including the Sample Specification itself, you may use the
 link:{specrepofiles}/config/copyright-ccby.adoc[CC-BY-4.0 license] on the
 artifacts, as well as the input markup files.
 

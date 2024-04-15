@@ -5,7 +5,7 @@
 = Repository Management
 
 This chapter is not prescriptive, but describes issues actual specification
-repositories may encounter, and some guidelinse for dealing with them.
+repositories may encounter, and some guidelines for dealing with them.
 
 Exceptions to most of these guidelines exist, and can be discussed with Neil
 Trevett and the Khronos Board of Promoters.
@@ -20,46 +20,39 @@ published after ratification.
 
 To meet both needs, there are usually two specification repositories: a
 private version in Khronos' gitlab server, and a public version in the
-KhronosGroup organization on github.com.
+`link:https://github.com/KhronosGroup/[KhronosGroup]` organization on
+GitHub.
 This allows internal IP-sensitive development to take place while at the
-same time, public issues and pull requests can be done for already published
-versions of specifications.
+same time, public issues and pull requests can be created for already
+published versions of specifications.
 
 
 == Repository Creation and Naming
 
-New specifications are kept in repositories called `**Name**-Docs` where
-`**Name**` is the name of the API or Language being specified.
+Specifications are kept in repositories called `**Name**-Docs` where
+`**Name**` is the name of the API or language being specified.
 
-In internal gitlab, there is a hierarchy consisting of a gitlab _group_
+On gitlab, there is a naming hierarchy consisting of a gitlab _group_
 containing multiple _projects_.
 A group corresponds to a Khronos Working Group, and a project to a git
-repository with associate gitlab issue tracker, merge request manager, CI
+repository with associated gitlab issue tracker, merge request manager, CI
 configuration, and so on.
 For example, the `Sample` group contains the `Sample-Docs` project, which
 includes the repository defining the `Sample-Docs` specification.
 It exists at URL
 
-https://gitlab.khronos.org/sample/sample-docs
+https://gitlab.khronos.org/Sample/Sample-Docs
 
-In GitHub, all Khronos repositories are in a GitHub _organization_ named
-`KhronosGroup`, with no further hierarchy possible.
+On GitHub, the naming hierarchy consists of our GitHub _organization_ (named
+`KhronosGroup`), containing multiple _repositories_.
+There is no deeper nesting possible, so we cannot use exactly the same path
+to repositories on GitHub and gitlab.
 
-A gitlab project name corresponds to a GitHub repository name.
+GitHub repository names correspond to gitlab project names, and both
+contain the actual git repository and associated tools.
 We avoid name collisions on GitHub by using the gitlab project name as the
-first part of the GitHub repository name, and using the GitHub repository
-name on both gitlab and GitHub.
-
-[NOTE]
-.Note
-====
-For example, there are multiple repositories for projects associated with
-the Vulkan API, such as
-
-  * `KhronosGroup/Vulkan-Docs`
-  * `KhronosGroup/Vulkan-Loader`
-  * `KhronosGroup/Vulkan-Tools`
-====
+first part of the repository name, and using the repository name on GitHub
+as the project name on gitlab.
 
 Thus, the Sample-Docs repository on GitHub is at URL
 
@@ -69,13 +62,21 @@ https://github.com/KhronosGroup/Sample-Docs
 .Note
 ====
 There is no hard requirement that corresponding repositories in gitlab and
-GitHub must be named the same.
+GitHub be named the same.
 For example, the gitlab group and project name for the Vulkan specification
 are both `vulkan`, while the GitHub organization and repository name are
 `KhronosGroup` and `Vulkan-Docs` respectively.
 
-However, with the benefit of hindsight, it is better to use project and
-repository names that are as similar as possible.
+However, with the benefit of hindsight, it is better to use group, project
+and repository names that are as similar as possible on both platforms.
+
+When your Working Group eventually creates additional repositories, they
+follow the same naming convention.
+For example, if we were to add a `Tutorial` repository, its names on GitHub
+and gitlab would be:
+
+https://gitlab.khronos.org/Sample/Sample-Tutorial
+https://github.com/KhronosGroup/Sample-Tutorial
 ====
 
 Creating and configuring new groups, projects, and repositories is beyond
@@ -83,13 +84,13 @@ the scope of this document, and requires administrative privileges most
 Khronos members do not have.
 Please email mailto:memberservices@khronos.org[Member Services]
 for assistance.
-Once created, designated owners and administrators should be granted
-privileges sufficient for day-to-day upkeep of repositories.
+Once created, designated owners and administrators will be given privileges
+sufficient for day-to-day upkeep of repositories.
 
 
 == Synchronizing Repositories
 
-It is important to keep gitlab and GitHub repositories synchronized.
+It is important to keep GitHub and gitlab repositories synchronized.
 Most changes, including bugfixes new versions and extensions of
 specifications, are made on gitlab and propagated to GitHub after
 ratification.
@@ -99,8 +100,17 @@ developers using a specification.
 It is easiest to keep repositories synchronized if they share the same
 commit history.
 Initially, this can be accomplished by creating a repository clone with
-multiple _upstreams_ for gitlab and github, and pushing the same branch(es)
-in the local clone to both upstreams.
+multiple _upstreams_ for gitlab and github, and pushing branch(es) in the
+local clone to both upstreams if they are to be published.
+
+[NOTE]
+.Note
+====
+For example, you might have a default (`main`) branch which corresponds to
+the published version of your specification and exists on both GitHub and
+gitlab, and a development (`devel`) branch which corresponds to the
+in-development version of your specification and exists only on gitlab.
+====
 
 The specification editor's responsibilities include pushing changes from
 gitlab to github when publishing specification updates developed internally,

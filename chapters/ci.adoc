@@ -21,8 +21,20 @@ recommendation away from Actions, or start self-hosting Actions runners.
 ====
 
 
+[[ci-configuration]]
+== Repository CI Configuration
+
+To execute CI jobs on GitHub, GitHub Actions must be enabled in the
+repository settings.
+
+On gitlab, "`shared runners`" must be enabled in the repository CI settings.
+
+If the repository administrator has trouble doing this, contact
+mailto:memberservices@khronos.org[Member Services]
+
+
 [[ci-jobs]]
-== Sample CI Scripts and Jobs
+== Repository CI Scripts and Jobs
 
 Gitlab and GitHub Actions CI scripts are both YAML format files, but the
 syntax of the YAML differs substantially.
@@ -64,4 +76,16 @@ and the `runDocker` script must also be updated.
 
 == Sample CI Outputs
 
-TODO provide links to appropriate pages
+On GitHub, click on `Actions` in the repository menu bar and look at the
+latest workflow corresponding to a branch of interest, or follow
+link:https://github.com/KhronosGroup/Sample-Docs/actions[this link] to
+workflows for the Sample-Docs repository.
+
+On gitlab, click on `Build` and then `Jobs` in the repository left side panel
+menu and look at the latest job corresponding to a branch of interest, or
+follow link:https://gitlab.khronos.org/Sample/Sample-Docs/-/jobs[this link]
+to workflows for the Sample-Docs repository.
+
+On both GitHub and gitlab, if you have a pull request / merge requests for
+your branch, a link to the latest job run for that PR / MR can be found on
+the corresponding PR / MR page.
