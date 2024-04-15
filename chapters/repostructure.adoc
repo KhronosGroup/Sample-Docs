@@ -30,15 +30,14 @@ repository on GitHub.
     we can accept, and the Contributor License Agreement.
   * `CODE_OF_CONDUCT.adoc` - Khronos Code of Conduct for participating in
     our open source projects.
-  * `LICENSE.adoc` - briefly enumerates all the licenses used in the
-    repository.
-    This is somewhat duplicative of `COPYING.adoc` and the `LICENSES`
-    directory, which is unavoidable since those files serve different
-    purposes.
   * `LICENSES/` - contains the complete and unmodified text of all licenses
     used in the repository.
     See <<licenses-documenting, Documenting Licenses>>.
-  * ChangeLog.adoc - the repository change log.
+  * `LICENSE.adoc` - briefly enumerates all the licenses used in the
+    repository.
+    This is unavoidably duplicative of `COPYING.adoc` and the `LICENSES`
+    directory, since those files serve different purposes.
+  * `ChangeLog.adoc` - the repository change log.
     Typically used to summarizes changes between public updates of a
     specification, and intended as a more readable version of the git commit
     history.
@@ -120,8 +119,8 @@ Scripts in the Sample-Docs repo include:
 
   * `config/attribs.adoc` defines asciidoc attributes for (mostly) math
     symbols, corresponding to LaTeX math operators.
-    For example, you can write pass:[`{sqrt} {pi}`] for `{sqrt} {pi}` and
-    similar simple math markup.
+    For example, you can write pass:[`{pi} {plusmn} 1`] for `{pi} {plusmn}
+    1` and similar simple math markup.
   * `config/copyright-ccby.adoc` - CC-BY-4.0 copyright file for
     inclusion in published specification artifacts.
     Used in the Sample-Docs repository as this specification is neither
@@ -147,6 +146,11 @@ Two simple extension, added to the build in the `Makefile`, are:
   * `config/open_listing_block.rb` - allows a listing block to masquerade as
     an open block, allowing open block nesting as in the following example.
 
+[NOTE]
+.Note
+====
+An example of open block nesting:
+
 [open]
 .Open Block Nesting Example
 --
@@ -155,10 +159,12 @@ Normally open blocks cannot contain other open blocks.
 
 [open]
 ----
-The outer open block contains a nested open block, which is enabled by the
+The outer open block contains this nested open block, which is enabled by the
 open_listing_block extension.
+This syntax is not allowed by unextended asciidoctor.
 ----
 --
+====
 
 
 === Asciidoc Style Files

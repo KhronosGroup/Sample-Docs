@@ -48,7 +48,7 @@ specifications.
 Advantages of GFA are:
 
   * Renders directly in the brower's view of the file on github, without
-    need for offline processing.
+    need for offline processing or hosting of artifacts.
 
 Disadvantages of GFA are:
 
@@ -73,11 +73,11 @@ There are also JavaScript (Asciidoctor.js) and Java (AsciidoctorJ)
 implementations, which are versions of Asciidoctor translated or virtualized
 to run with those languages.
 
-Out of the box, Asciidoctor is flexible enough for many specifications, with
-no need for extensions or plugins.
+Out of the box Asciidoctor is flexible enough for many specifications, with
+no need for custom extensions.
 This is the simplest way to use Asciidoctor, although your specification
 will still need to do configuration work.
-The Sample-Docs specification is largely written in unextended Asciidoctor,
+The Sample Specification is largely written in unextended Asciidoctor,
 although it does include a few small extensions as examples.
 
 Advantages of unextended Asciidoctor are:
@@ -93,7 +93,7 @@ Advantages of unextended Asciidoctor are:
   * Supports plugin syntax highlighters for markup of included code samples.
   * Can always be extended later, if needed.
 
-Disadvantages of GFA are:
+Disadvantages of unextended Asciidoctor are:
 
   * Using extensions opens up additional input file format support, markup
     syntax, semantic tagging, and anything else you can imagine writing a
@@ -104,11 +104,11 @@ Disadvantages of GFA are:
 == Most Complex: Asciidoctor with Extensions
 
 Many features such as PDF generation are in fact Asciidoctor extensions,
-but this is largely irrelevant to the users.
+but this is largely irrelevant to their users.
 However, as a specification grows, it may be desirable to write _custom
 extensions_ to modify the behavior of the underlying asciidoc processor.
-The Vulkan and OpenXR specifications, in particular, use a large number
-of custom extensions for many purposes, including but not limited to:
+For example, the Vulkan and OpenXR specifications use a large number of
+custom extensions for many purposes, including but not limited to:
 
   * Extended markup language features for convenience (such as the
     `config/open_listing_block.rb` example found in the Sample-Docs
@@ -135,7 +135,7 @@ Advantages of extended Asciidoctor are:
     document that need special handling for the API or language being
     specified.
 
-Disadvantages of GFA are:
+Disadvantages of extended Asciidoctor are:
 
   * Requires learning a small amount Ruby, and about Asciidoctor
     internals.
@@ -200,8 +200,9 @@ the semantic markup of the Vulkan specification appropriately
 for Antora, this has enabled us to support both formats.
 
 Unfortunately, the Vulkan approach is specific to the rigid style guidelines
-and the extended semantic markup conventions of that specification, and will
-require considerable adaptation to be used in other specifications.
+and the extended semantic markup conventions of that specification, and the
+scripts would require considerable adaptation to be used in other
+specifications.
 
 We hope to have better answers and strategies for Antora migration in the
 relatively near future.
