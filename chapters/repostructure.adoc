@@ -56,13 +56,14 @@ as follows:
     than strictly required, since it is intended as an example for use with
     actual specifications that will themselves be much more complex than the
     Sample-Docs specification.
-  * `spec.adoc` (or `__apiname__.adoc` or other meaningful title) -
+  * `sample.adoc` (or `__apiname__.adoc` or other meaningful title) -
     top-level specification markup file, which specifies the document
     headers and includes separate files for chapters and appendices.
   * `chapters/` - directory containing individual asciidoc files
     corresponding to individual chapters of the specification.
-    Most specifications will need at least the following files, which can be
-    modified starting from the examples in the Sample-Docs repository:
+    Most specifications will need to use and modify the following files,
+    which can be modified starting from the examples in the Sample-Docs
+    repository:
   ** `chapters/preamble.adoc` - includes the Khronos Specification Copyright
      License applied to the specification artifacts.
   ** `chapters/introduction.adoc` - first chapter of the specification,
@@ -164,7 +165,7 @@ open_listing_block extension.
 
   * `config/docinfo-header.html` is an HTML fragment injected into the
     header of output artifacts as specified by the document header
-    attributes `:docinfo:` and `:docinfodir:` in `spec.adoc`.
+    attributes `:docinfo:` and `:docinfodir:` in `sample.adoc`.
     It includes a base64-encoded version of the Khronos logo that will
     appear near the head of the HTML document.
   * `config/khronos.css` is a slightly modified version of the standard

@@ -7,13 +7,19 @@
 
 This document, referred to as the "`Sample Specification`" or just the
 "`Specification`" hereafter, is a reference for creating repositories
-containing actual Khronos Specifications.
+containing new Khronos API or language specifications, referred to as
+"`Khronos specifications`" hereafter.
 
 The Sample Specification is not, itself, a ratified Khronos product.
 Its purpose is to
 
   * Provide a reference repository which can be cloned as the starting point
-    for new Khronos Specifications.
+    for new Khronos specifications.
+  ** The reference repository may also be useful when creating
+     other types of repositories, such as tutorials or sample code.
+     The specification markup and build examples are less relevant to those
+     use cases, but the repository structure and related files are relevant
+     to any Khronos repository.
   * Provide examples and documentation for using specification repository
     tooling and infrastructure including:
   ** Boilerplate files needed by all Khronos repositories
@@ -25,20 +31,25 @@ Its purpose is to
 The published version of this Specification is available in the
 https://registry.khronos.org/Sample/[Sample Registry].
 
-The repository used to generate the Specification is stored in the
-https://github.com/KhronosGroup/Sample-Docs[Sample Documentation Repository]
+The repository used to generate this Specification is stored in the
+https://github.com/KhronosGroup/Sample-Docs[Sample-Docs repository], and
+should be referred to while reading this document.
 
-The Sample Repository also has a public issue tracker, and allows the
+The Sample-Docs repository also has a public issue tracker, and allows the
 submission of pull requests that improve the Specification.
 
 
 [[introduction-conventions]]
 == Document Conventions
 
-This document is intended for use by Khronos Working Groups creating new
-specifications.
-As such, it includes some language that is relevant only when defining an
-actual Specification.
+The Sample Specification is intended for use by Khronos Working Groups
+creating new API or language specifications.
+As such, it includes some material that is relevant only when defining a
+new specification.
+If you have forked the Sample-Docs repository as a starting point, you will
+need to examine all files in the repository; edit or remove files as
+appropriate for your project; and add new files for additional content
+specific to your specification.
 
 [NOTE]
 .Note
@@ -47,7 +58,7 @@ Informative notes, such as this paragraph, are used to provide commentary
 and context.
 ====
 
-Actual Khronos specifications are intended for use by both implementors, and
+Khronos specifications are intended for use by both implementors, and
 by application developers seeking to make use of implementations.
 A specification forms a contract between these parties.
 
@@ -66,11 +77,11 @@ _Ratification_ of a Khronos specification is a status conferred by vote of
 the Khronos Board of Promoters, bringing that core version or extension
 under the umbrella of the Khronos IP Policy.
 
-The Sample Specification is not ratified, since it contains no IP, just
+The Sample Specification is not ratified since it contains no IP, just
 process documentation.
-Actual Khronos specifications, including core versions and optional
-Khronos-defined extensions, should be ratified prior to publication.
-Ratification status is shown in the <<preamble, document preamble>>.
+Khronos specifications, including core versions and optional Khronos-defined
+extensions, should be ratified prior to publication. Ratification status is
+shown in the <<preamble, document preamble>>.
 
 [NOTE]
 .Note
@@ -90,8 +101,8 @@ ratified.
 [[introduction-informative-language]]
 === Informative Language
 
-Some language in the specification is purely informative, intended to give
-background or suggestions to implementors or developers.
+Some language in a Specification is purely informative, intended to
+give background or suggestions to implementors or developers.
 
 If an entire chapter or section contains only informative language, its
 title will be suffixed with "`(Informative)`".
@@ -119,7 +130,7 @@ to implementations.
 .Note
 ====
 Please be conscious in use of normative terminology, and ensure that each
-such use is agreed by the Working Group controlling a Specification.
+such use is agreed by the Working Group controlling a specification.
 These terms place constraints on implementations that may have consequences
 for IP licensing and Ratification.
 ====
@@ -143,7 +154,7 @@ These key words are never used in text addressing implementors.
 .Note
 ====
 There is an important distinction between *cannot* and *must not*, as used
-in a Khronos Specification.
+in the Specification.
 *Cannot* means something an application literally is unable to express or
 accomplish through the API or language.
 *Must not* means something that the application is capable of expressing,
@@ -183,7 +194,7 @@ Specification uses any of the normative terms defined in
 requirements, either as a whole or in part.
 
 The following documents are referenced by normative sections of the
-specification:
+Specification:
 
 TODO Use relevant actual references here (asciidoc user guide, SPDX website, etc.)
 

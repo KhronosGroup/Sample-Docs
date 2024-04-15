@@ -5,10 +5,11 @@
 [[credits]]
 = Credits (Informative)
 
-The Sample Specification and corresponding Sample Repository were created by
-Jon Leech based on the "`Khronos Open Source Repository Resources`" document
-maintained by Neil Trevett, and on Khronos' collective experience with open
-source licenses, repository creation, and specification authoring.
+The Sample Specification and corresponding Sample-Docs repository were
+created by Jon Leech based on the "`Khronos Open Source Repository
+Resources`" document maintained by Neil Trevett, and on Khronos' collective
+experience with open source licenses, repository creation, and specification
+authoring.
 
 Substantial contributions were made by:
 

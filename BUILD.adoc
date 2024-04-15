@@ -1,7 +1,7 @@
 // Copyright 2020 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
-= Khronos Sample Repository Specification Build Instructions and Notes
+= Khronos Sample Specification Repository Specification Build Instructions and Notes
 :toc2:
 :toclevels: 2
 
@@ -13,7 +13,7 @@ endif::[]
 [[intro]]
 == Introduction
 
-This document describes how to build the Sample Repository specification.
+This document describes how to build the Sample Specification.
 
 It documents how to set up your build environment, build steps and targets,
 and contains some troubleshooting advice.
@@ -32,7 +32,7 @@ and the guidelines here may be applicable.
 
 First, clone the Khronos Github repository containing the specification to
 your local Linux, Windows, or Mac PC.
-The repository is located at https://github.com/KhronosGroup/Sample-Repo/ .
+The repository is located at https://github.com/KhronosGroup/Sample-Docs/ .
 
 Next, install all the necessary build tools (see <<depends,Software
 Dependencies>> below).

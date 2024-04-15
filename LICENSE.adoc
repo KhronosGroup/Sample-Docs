@@ -1,13 +1,21 @@
 // Copyright 2024 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
-= LICENSE file for the KhronosGroup/Sample-Repo project
+= LICENSE File for the KhronosGroup/Sample-Docs Project
 
 [NOTE]
 .Note
 ====
-LICENSE must enumerate all licenses used in the repository.
-It does not go into detail; that is the purpose of the COPYING file
+The most common GitHub conventions is for the LICENSE file to contain a
+single license that applies to an entire repository.
+
+This is not practical for Khronos specification repositories, which will
+always contain files under a mix of at least three licenses, and sometimes
+many more than three.
+
+Our convention is that LICENSE must enumerate all licenses used in a Khronos
+specification repository.
+This file does not go into detail; that is the purpose of the COPYING file
 and the LICENSES directory.
 ====
 

@@ -1,6 +1,6 @@
 // This is version V10_Feb23 of the Khronos Specification Copyright License
 // Header, reformatted for asciidoc markup and for expository purposes in
-// the Khronos Sample Repository.
+// the Khronos Sample Specification repository.
 // The original source is in Member Causeway at
 //  https://members.khronos.org/wg/General/document/25728
 // and updates there should be reflected here.

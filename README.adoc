@@ -5,7 +5,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-= Khronos Sample Repository
+= Khronos Sample Specification
 
 This repository is a working example of how to construct a Khronos
 Specification repository.
@@ -26,7 +26,7 @@ It is written in "`Github-flavored asciidoc" markup, which is a limited
 subset of the link:https://asciidoctor.org[Asciidoc] text markup language.
 Github and Khronos' internal Gitlab server both render asciidoc markup, and
 we recommend using asciidoc markup wherever possible in your own repository.
-Many Khronos Specifications are authored in asciidoc format, and assistance
+Many Khronos specifications are authored in asciidoc format, and assistance
 is available if you want to convert an existing specification or other
 document to asciidoc format.
 
@@ -78,7 +78,7 @@ Khronos practice, following emerging norms in the open source community, is
 that the default branch should be named `main`.
 This is the default when creating a new repository, but can be changed by
 the repository administrators in the
-link:https://github.com/oddhack/Sample-Repo/settings/branches[repository
+link:https://github.com/KhronosGroup/Sample-Docs/settings/branches[repository
 settings].
 ====
 
@@ -110,11 +110,10 @@ appendices/           Specification appendices
 chapters/             Specification chapters
 config/               Asciidoctor configuration, CSS, and index generator
 images/               Images (figures, diagrams, icons)
-style/                Sources for "`styleguide`" (Vulkan Documentation and Extensions: Procedures and Conventions)
 ```
 
 
-== Building the Sample Repository Specification
+== Building the Sample Specification
 
 [NOTE]
 .Note

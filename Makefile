@@ -1,11 +1,12 @@
 # Copyright 2024 The Khronos Group Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# Sample Repository Specification Makefile
+# Khronos Sample Specification Makefile
 
 # NOTE: this Makefile is massively overbuilt in terms of just generating
-# the Sample Repository specification itself. It is intended to show
-# useful methods and targets for more complex specifications.
+# the Sample Specification itself.
+# It is intended to show useful methods and targets for more complex
+# specifications.
 # Other repositories are expected to modify the Makefile extensively as
 # appropriate for their needs, including adding additional targets for
 # intermediate generated files and other artifacts, etc.
@@ -30,9 +31,6 @@ IMAGEOPTS = inline
 #  pdf - PDF single-page API specification
 
 all: html pdf
-
-# Note that the := assignments below are immediate, not deferred, and
-# are therefore order-dependent in the Makefile
 
 QUIET	 ?= @
 PYTHON	 ?= python3
@@ -142,14 +140,15 @@ ADOCPDFOPTS  = $(ADOCPDFEXTS) -a mathematical-format=svg \
 
 .PHONY: directories
 
-# Images used by the spec. These are included in generated HTML now.
+# Images used by the specification.
+# These are included in generated HTML now.
 IMAGEPATH = $(SPECDIR)/images
 SVGFILES  = $(wildcard $(IMAGEPATH)/*.svg)
 
 # Top-level spec source file
-SPECSRC   = $(SPECDIR)/spec.adoc
-# Static files making up sections of the API spec.
-SPECFILES = $(wildcard chapters/[A-Za-z]*.txt appendices/[A-Za-z]*.txt)
+SPECSRC   = $(SPECDIR)/sample.adoc
+# Static files making up sections of the specification.
+SPECFILES = $(wildcard chapters/[A-Za-z]*.adoc appendices/[A-Za-z]*.adoc)
 # Shorthand for where different types generated files go.
 # All can be relocated by overriding GENERATED in the make invocation.
 GENERATED      = $(CURDIR)/gen
@@ -172,11 +171,11 @@ $(KATEXINSTDIR): $(KATEXSRCDIR)
 # There is some complexity to try and avoid short virtual targets like 'html'
 # causing specs to *always* be regenerated.
 
-html: $(HTMLDIR)/spec.html $(SPECSRC) $(COMMONDOCS)
+html: $(HTMLDIR)/sample.html $(SPECSRC) $(COMMONDOCS)
 
-#@TODO $(HTMLDIR)/spec.html: KATEXDIR = ../katex
-#@TODO $(HTMLDIR)/spec.html: $(SPECSRC) $(COMMONDOCS) $(KATEXINSTDIR)
-$(HTMLDIR)/spec.html: $(SPECSRC) $(COMMONDOCS)
+#@TODO $(HTMLDIR)/sample.html: KATEXDIR = ../katex
+#@TODO $(HTMLDIR)/sample.html: $(SPECSRC) $(COMMONDOCS) $(KATEXINSTDIR)
+$(HTMLDIR)/sample.html: $(SPECSRC) $(COMMONDOCS)
 	$(QUIET)$(ASCIIDOC) -b html5 $(ADOCOPTS) $(ADOCHTMLOPTS) -o $@ $(SPECSRC)
 	$(QUIET)$(TRANSLATEMATH) $@
 
@@ -184,9 +183,9 @@ $(HTMLDIR)/spec.html: $(SPECSRC) $(COMMONDOCS)
 # OPTIMIZEPDFOPTS=--compress-pages is slightly better, but much slower
 OPTIMIZEPDF = hexapdf optimize $(OPTIMIZEPDFOPTS)
 
-pdf: $(PDFDIR)/spec.pdf $(SPECSRC) $(COMMONDOCS)
+pdf: $(PDFDIR)/sample.pdf $(SPECSRC) $(COMMONDOCS)
 
-$(PDFDIR)/spec.pdf: $(SPECSRC) $(COMMONDOCS)
+$(PDFDIR)/sample.pdf: $(SPECSRC) $(COMMONDOCS)
 	$(QUIET)$(MKDIR) $(PDFDIR)
 	$(QUIET)$(MKDIR) $(PDFMATHDIR)
 	$(QUIET)$(ASCIIDOC) -b pdf $(ADOCOPTS) $(ADOCPDFOPTS) -o $@ $(SPECSRC)
@@ -199,10 +198,10 @@ clean: clean_html clean_pdf clean_generated
 
 clean_html:
 	$(QUIET)$(RMRF) $(HTMLDIR) $(OUTDIR)/katex
-	$(QUIET)$(RM) $(OUTDIR)/spec.html
+	$(QUIET)$(RM) $(OUTDIR)/sample.html
 
 clean_pdf:
-	$(QUIET)$(RMRF) $(PDFDIR) $(OUTDIR)/spec.pdf
+	$(QUIET)$(RMRF) $(PDFDIR) $(OUTDIR)/sample.pdf
 
 # Generated directories and files to remove
 CLEAN_GEN_PATHS = \

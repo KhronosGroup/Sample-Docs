@@ -9,7 +9,7 @@ log that is functionality oriented (rather than just a list of commits) can
 be useful to developers.
 ====
 
-Update Log for the KhronosGroup/Sample-Repo repository on Github.
+Update Log for the KhronosGroup/Sample-Docs repository on Github.
 Updates are in reverse chronological order starting with the latest public
 release.
 

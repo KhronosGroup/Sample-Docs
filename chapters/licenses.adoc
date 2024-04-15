@@ -7,18 +7,22 @@
 All content in a Khronos specification must be licensed.
 This chapter discusses
 
-  * choice of license
-  * how to include a license in a file
-  * how to document and verify repository licenses using
+  * <<licenses-choices, Choice of license>>
+  * <<licenses-copyright, How to include a license in a file>>
+  * How to document and verify repository licenses using
     <<licenses-reuse, REUSE>>
-  *
+  * <<licenses-cla, Contributor License Agreements>>
+  * <<licenses-artifacts, Licenses for ratified and non-ratified
+    specification artifacts>>
+  * When to use the <<licenses-confidential, Confidential Repository
+    Notice>>
 
 This chapter incorporates and supersedes the "`Khronos Open Source
 Repository Resources`" document in the member Causeway area.
 
 
 [[licenses-choices]]
-== License Choices
+== Choice of License
 
 The Khronos default licenses for specifications are:
 
@@ -34,14 +38,13 @@ The Khronos default licenses for specifications are:
     LGPL-compatibile MIT License.
     Please consult with Neil Trevett before taking this step.
   * Published specification artifacts - generated files such as HTML and PDF
-    documents - are placed under the Khronos Specification Copyright so long
-    as they are Ratified Specifications contain only ratified Khronos
-    content.
+    documents - are placed under the Khronos Specification Copyright License
+    so long as they are Ratified Specifications.
     This is required so that such specifications bring Khronos licensees
     under the umbrella of the Khronos IP agreements.
-    Ths Khronos Specification Copyright should never be used on markup or
-    source files, or on specification artifacts that include non-Ratified
-    content, such as vendor extensions.
+    Ths Khronos Specification Copyright License should never be used on
+    markup or source files, or on specification artifacts that include
+    non-ratified content, such as vendor extensions.
 
 [NOTE]
 .Note
@@ -152,7 +155,7 @@ Every license uses *must* have a corresponding SPDX license identifier.
 The sample repository already includes the following licenses, which
 cover most use cases:
 
-.Licenses in the Sample Repository
+.Licenses in the Sample Specification Repository
 [options="header"]
 |====
 | SPDX License Identifier | Filename | Description
@@ -164,7 +167,7 @@ cover most use cases:
     | Creative Commons Attribution 4.0
 | LicenseRef-KhronosSpecCopyright
     | `LICENSES/LicenseRef-KhronosSpecCopyright.adoc`
-    | Khronos Specification Copyright
+    | Khronos Specification Copyright License
 | MIT
     | `LICENSES/MIT.txt`
     | MIT Licenses
@@ -180,7 +183,8 @@ Jon Leech and Neil Trevett first.
 This may happen if you are using a file from an open source project with a
 nonstandard license, which is uncommon.
 It may also happen if you are using a proprietary license *other* than the
-Khronos Specification License, which is already included in this repository.
+Khronos Specification Copyright License, which is already included in this
+repository.
 Khronos should make every reasonable effort to avoid using such proprietary
 licenses.
 
@@ -288,6 +292,7 @@ To integrate a CLA with a new repository, contact our administrator,
 mailto:webservices@khronosgroup.org[James Riordon].
 
 
+[[licenses-artifacts]]
 == Licenses for Ratified and Non-Ratified Specification Artifacts
 
 When creating a specification, asciidoc (or other markup) files are
@@ -304,7 +309,7 @@ for public consumption.
 
 In either case, artifacts must be placed under a form of the
 link:{specrepofiles}/config/copyright-spec.adoc[Khronos Specification
-License].
+Copyright License].
 By setting appropriate asciidoc attributes, this license can be used for
 both *ratified* and *unratified* specifications.
 See the comments in the license markup for details.
@@ -324,15 +329,15 @@ The purposes of the Specification Copyright include:
 .Note
 ====
 The link:{specrepofiles}/config/copyright-spec.adoc[Khronos Specification
-License] found in the Sample-Docs repository is derived from the
+Copyright License] found in the Sample-Docs repository is derived from the
 link:https://members.khronos.org/wg/General/document/25728[Khronos Ratified
 Specification Header] and
 link:https://members.khronos.org/wg/General/document/23703[Khronos
 Specification Copyright License Header] in the member Causeway area.
 
-The Specification License has been reformatted for asciidoc markup, and uses
-asciidoc conditionals to control inclusion of different parts of the license
-as required.
+The Khronos Specification License has been reformatted for asciidoc markup,
+and uses asciidoc conditionals to control inclusion of different parts of
+the license as required.
 Using it in an actual specification repository requires further editing to
 include details and trademarks as appropriate for that repository, and to
 select appropriate parts of the license.
@@ -354,6 +359,7 @@ entirely in favor of CC-BY?
 ====
 
 
+[[licenses-confidential]]
 == Confidential Repository Notice
 
 The following notice *must* be placed in any repository covered by the

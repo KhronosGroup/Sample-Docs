@@ -15,7 +15,7 @@ file is intended to be imported to a new specification repository while the
 Sample Specification is not.
 ====
 
-Contributions to the Sample-Repository repository are welcome.
+Contributions to the Sample Specification repository are welcome.
 
 Contributions may be in the form of Issues proposing a change, or Pull
 Requests containing fixes for, or additions to:
@@ -34,7 +34,8 @@ If you are adding a new file, it must be under one of the following
 licenses:
 
   * Creative Commons Attribution 4.0 International, for specification markup
-    files and other documentation (for example, link:spec.adoc[`spec.adoc`])
+    files and other documentation (for example,
+    link:sample.adoc[`sample.adoc`])
   * Apache 2.0, for scripts and other tooling (for example,
     link:Makefile[`Makefile`]
   * Apache 2.0 OR MIT, for source-like files that may need to used in GPL
@@ -78,7 +79,7 @@ license.
 
 == Contributor License Agreement (CLA)
 
-When you propose a pull request on Sample-Repository, you must execute a
+When you propose a pull request on this repository you must execute a
 Contributor License Agreement, to confirm you own your work and are granting
 Khronos the necessary permissions to redistribute it under our licenses.
 
@@ -86,7 +87,7 @@ Khronos the necessary permissions to redistribute it under our licenses.
 .Note
 ====
 Every public Khronos repository must have a Contributor License Agreement
-setup before any outside contributions can be accepted.
-See the sample Specification document in this repository for details about
+setup before any contributions from outside Khronos can be accepted.
+See the Sample Specification document in this repository for details about
 selecting and configuring CLAs.
 ====
