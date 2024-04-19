@@ -185,15 +185,16 @@ artifacts such as HTML and PDF files.
 [NOTE]
 .Note
 ====
-For example, the OpenCL Working Group maintains their pnublished
+For example, the OpenCL Working Group maintains their published
 specification source in the
 link:https://www.github.com/KhronosGroup/OpenCL-Docs[OpenCL-Docs] repository
 on GitHub.
 
-Artifacts generated from the specification repository are published in the
+Artifacts generated from the specification repository are committed to the
 corresponding
 link:https://www.github.com/KhronosGroup/OpenCL-Registry[OpenCL-Registry]
-repository.
+repository, which is published at the
+link:https://registry.khronos.org/OpenCL[OpenCL Registry].
 ====
 
 The registry repositories are only a means of publication.
@@ -226,3 +227,10 @@ Other approaches have pros and cons compared to the registry.
 We think the registry is the best publishing approach for most
 specifications.
 ====
+
+When a new Working Group needs needs to publish artifacts in the Khronos
+Registry, they should work with mailto:memberservices@khronos.org[Member
+Services] to create a Registry repository for those artifacts, and add it to
+the Registry.
+After the registry repository is setup, the specification editor should be
+able to update it as needed for specification updates.
