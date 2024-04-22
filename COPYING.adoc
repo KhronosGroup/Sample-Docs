@@ -33,7 +33,7 @@ The Sample-Docs project uses several licenses.
   Instead, they are tagged in the `.reuse/dep5` file.
 * For compatibility with external developers working in LGPLed projects who
   have requested it, some specific files can be licensed under a dual (SPDX
-  license identifier "`Apache-2.0 OR MIT`" License).
+  license identifier "`Apache-2.0 OR MIT`") License.
   No such files are in this repository at present.
 
 Users outside Khronos who create and post specifications from this
@@ -86,7 +86,7 @@ your changes under the umbrella of the Khronos IP policy.
 Q: Can you change the license on your files so they're compatible with my
 license?
 
-A: We use a dual CC-BY-4.0 / MIT license on certain files when that is
+A: We use a dual Apache 2.0 / MIT license on certain files when that is
 essential to make them compatible with LGPL-licensed projects.
 
 If you *require* LGPL compatibility for use of other Apache-2.0 licensed
