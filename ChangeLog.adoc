@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 [NOTE]
@@ -14,6 +14,12 @@ Updates are in reverse chronological order starting with the latest public
 release.
 
 This summarizes periodic public updates, not individual commits.
+
+'''
+
+Change log for February 22, 2026
+
+  * Update repository to current build tools, copyright dates, etc.
 
 '''
 

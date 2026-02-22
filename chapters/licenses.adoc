@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 [[licenses]]
@@ -92,7 +92,7 @@ Examples using the default licenses are:
 [source,c++,subs=attributes+]
 .Makefile or Shell Script with Apache 2.0 License
 ----
-# Copyright 2023-2024 The Khronos Group Inc.
+# Copyright 2023-2026 The Khronos Group Inc.
 # SPDX-License-{empty}Identifier: Apache-2.0
 
 ...
@@ -101,7 +101,7 @@ Examples using the default licenses are:
 [source,asciidoc,subs=attributes+]
 .Asciidoc Markup File with Creative Commons Attribution 4.0 License
 ----
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2026 The Khronos Group Inc.
 // SPDX-License-{empty}Identifier: CC-BY-4.0
 
 ...
@@ -113,7 +113,7 @@ Examples using the default licenses are:
 <?xml version="1.0" encoding="UTF-8"?>
 <registry>
     <comment>
-Copyright 2015-2024 The Khronos Group Inc.
+Copyright 2015-2026 The Khronos Group Inc.
 SPDX-License-{empty}Identifier: Apache-2.0 OR MIT
     </comment>
 ...
@@ -217,7 +217,7 @@ Some examples of the `dep5` syntax for a file or group of files are:
 [source]
 ----
 Files: images/*.svg
-Copyright: 2015-2024 The Khronos Group Inc.
+Copyright: 2015-2026 The Khronos Group Inc.
 License: CC-BY-4.0
 
 Files: config/khronos.css

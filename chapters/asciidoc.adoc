@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 [[asciidoc-markup]]
@@ -58,7 +58,7 @@ Disadvantages of GFA are:
     images, and any project-specific functionality your specification might
     want to use.
   * Does not support user-defined CSS and styles.
-  * Cannot generate PDF, only live HTML views.
+  * Cannot generate PDF in the browser view, only live HTML.
 
 
 [[asciidoctor-unextended]]
@@ -154,7 +154,7 @@ tool for content written in asciidoctor.
 It is written in Javascript and uses the Asciidoctor.js implementation of
 Asciidoctor.
 Antora is written and supported by the same developers who are responsible
-for Asciidoc and Asciidoctor, and reasonably widely used already.
+for Asciidoc and Asciidoctor, and is also widely used.
 
 Antora produces a static HTML website from one or more asciidoctor
 "`components`" (which roughly correspond to specifications or other
@@ -164,9 +164,13 @@ components.
 
 The link:https://docs.vulkan.org/[Vulkan Documentation Website]
 is Khronos' first step into Antora.
-Over time we expect more Khronos specifications will move into Antora
-format, but are still learning, and are not ready to recommend Antora for
-general use yet.
+It incorporates the Vulkan and GLSL Specifications as well as a large amount
+of developer-oriented material including the Vulkan Guide, Reference Pages,
+Samples, and Tutorial.
+
+Over time we expect more Khronos specifications will be published primarily
+in Antora format, but we are still learning, and are not ready to recommend
+Antora as the default publishing format yet.
 
 Advantages of Antora:
 

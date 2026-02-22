@@ -3,7 +3,7 @@ Upstream-Name: Vulkan-Docs
 Source: https://github.com/KhronosGroup/Vulkan-Docs
 
 Files: images/*.svg config/docinfo-header.html
-Copyright: 2015-2024 The Khronos Group Inc.
+Copyright: 2015-2026 The Khronos Group Inc.
 License: CC-BY-4.0
 
 Files: katex/*
@@ -15,9 +15,9 @@ Copyright: 2013 Dan Allen
 License: MIT
 
 Files: config/copyright-spec.adoc
-Copyright: 2014-2024 The Khronos Group Inc.
+Copyright: 2014-2026 The Khronos Group Inc.
 License: LicenseRef-KhronosSpecCopyright
 
 Files: config/ConfidentialRepositoryNoticeApr18.txt
-Copyright: 2020-2024 The Khronos Group Inc.
+Copyright: 2020-2026 The Khronos Group Inc.
 License: LicenseRef-KhronosSpecCopyright

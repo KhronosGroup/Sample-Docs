@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 [[fundamentals]]
@@ -15,7 +15,7 @@ section of the Vulkan Specification] for examples of concepts to describe in
 this chapter, such as ABIs, error codes, numeric representation, object
 models, threading behavior, and the validation model.
 
-Such descriptions will be specific to the implementation being specified,
+Such descriptions will be specific to the API or language being specified,
 the environments it is designed to execute in, and the language(s)
 applications may use to access the implementation.
 ====

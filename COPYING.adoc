@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 = COPYING file for the KhronosGroup/Sample-Docs project
@@ -30,7 +30,7 @@ The Sample-Docs project uses several licenses.
   Such files continue under their original MIT licenses.
   We have not added SPDX license identifiers to such externally originated
   files.
-  Instead, they are tagged in the `.reuse/dep5` file.
+  Instead, they are tagged in the `REUSE.toml` file.
 * For compatibility with external developers working in LGPLed projects who
   have requested it, some specific files can be licensed under a dual (SPDX
   license identifier "`Apache-2.0 OR MIT`") License.
@@ -61,7 +61,7 @@ and is published under CC-BY-4.0.
 
 However, all actual Khronos specification will need to be ratified and
 published under the Khronos Specification Copyright License, so this
-question is included in the Sample Specification.
+question is included in the Sample Specification FAQ.
 ====
 
 

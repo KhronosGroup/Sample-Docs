@@ -1,4 +1,4 @@
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-Identifier: CC-BY-4.0
 
 = Contributing
@@ -58,7 +58,7 @@ For example, this file uses the license
 // The {empty} attribute is needed to avoid confusing REUSE
 [source,asciidoc,subs=attributes+]
 ----
-// Copyright 2024 The Khronos Group Inc.
+// Copyright 2024-2026 The Khronos Group Inc.
 // SPDX-License-{empty}Identifier: CC-BY-4.0
 ----
 
