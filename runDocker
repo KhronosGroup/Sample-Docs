@@ -1,20 +1,31 @@
 #!/bin/bash
-# Copyright 2024-2026 The Khronos Group Inc.
+# Copyright 2022-2026 The Khronos Group Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-# runDocker - run a Docker image with the repository mounted inside
-# Usage: runDocker [image]
-# If not provided, the image defaults to the Khronos-provided
-# asciidoctor-spec image.
+# runDocker - run the Khronos `asciidoctor-spec` Docker image with a local
+# clone of the specification repository. This must be invoked from
+# the repository root directory.
+# The following command-line tools are required to run this script:
+#   awk dirname docker grep id realpath
+# These are all normal Linux developer tools except for 'docker' itself.
 
-image=${1-:asciidoctor-spec}
+# Determine path to repository root directory
+scriptpath=`dirname $0`
+repopath=`realpath $scriptpath`
 
-# Determine absolute path to the script directory
-relpath="$(dirname -- "${BASH_SOURCE[0]}")"
-specpath="$(cd -- "$relpath" && pwd)"
+# Get SHA256 of the asciidoctor-spec image build used by CI.
+image=`grep -m 1 khronosgroup/docker-images@sha256: $repopath/.gitlab-ci.yml | \
+    awk '{print $2}'`
 
-echo "Running Docker with image $image"
-echo "Mounting $specpath as /spec in the Docker image"
-docker run --user `id -u`:`id -g` \
-            -it --rm -v $specpath:/spec \
-            khronosgroup/docker-images${image} /bin/bash
+uid=`id -u`
+gid=`id -g`
+echo "Executing Docker with spec build image and mounted spec repository root:"
+
+# --user causes Docker to run as the specified UID:GID instead of as root
+# -it runs interactively and uses a pseudotty
+# --rm removes the container on exit
+# -v mounts the repository clone as /spec in the container
+# $image is image to run
+# /bin/bash drops into a shell in the container
+set -x
+docker run --network=host --user ${uid}:${gid} -it --rm -v ${repopath}:/spec $image /bin/bash

@@ -7,7 +7,7 @@
 # We now refer to the container by its SHA instead of the name, to prevent
 # caching problems when updating the image.
 # image: khronosgroup/docker-images:asciidoctor-spec
-image: khronosgroup/docker-images@sha256:42123ba13792c4e809d037b69152c2230ad97fbf43b677338075ab9c928ab6ed
+image: khronosgroup/docker-images@sha256:f1ca671f3bdb10ad49e238b9bf28853088a21af49504498fc9084c9b4fea4762
 
 # Verify repository license compliance
 license-check:

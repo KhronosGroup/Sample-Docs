@@ -17,8 +17,9 @@ This chapter covers:
   * When to use the <<licenses-confidential, Confidential Repository
     Notice>>
 
-This chapter incorporates and supersedes the "`Khronos Open Source
-Repository Resources`" document in the member Causeway area.
+This chapter incorporates and supersedes the
+link:https://members.khronos.org/wg/OpenCL/mail/thread/45534#60056["`Khronos
+Open Source Repository Resources`"] document in the member Causeway area.
 
 
 [[licenses-choices]]
@@ -144,7 +145,7 @@ copyright statement in the format described above:
     license other than by adding Khronos as a copyright owner along with the
     original author, under the same license.
 
-To provide a license for these files, add them to the `.reuse/dep5` file
+To provide a license for these files, add them to the `REUSE.toml` file
 described below for the <<licenses-reuse, REUSE>> tool.
 
 
@@ -205,41 +206,50 @@ Please make certain that you include the REUSE <<ci-jobs, `license-check` CI
 job>> in any new repositories.
 
 
-==== Adding Licenses to `dep5`
+==== Adding Licenses to `REUSE.toml`
 
 Files that do not and cannot have explicit license information included,
 such as the <<licenses-implicit, Licenses for Unmodifiable or Externally
 Sourced Files>> discussed above, *must* have their licenses documented in
-the file `.reuse/dep5`.
+the file `REUSE.toml`.
+The https://reuse.software/spec-3.3/#reusetoml[file syntax] is documented on
+the REUSE website if the examples in this repository are not sufficient.
 
-Some examples of the `dep5` syntax for a file or group of files are:
+Some examples of the `REUSE.toml` syntax for a file or group of files are:
 
 [source]
 ----
-Files: images/*.svg
-Copyright: 2015-2026 The Khronos Group Inc.
-License: CC-BY-4.0
+[[annotations]]
+path = ["images/**.svg", "config/docinfo-header.html"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2015-2026 The Khronos Group Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
 
-Files: config/khronos.css
-Copyright: 2013 Dan Allen
-License: MIT
+[[annotations]]
+path = "config/khronos.css"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2013 Dan Allen"
+SPDX-License-Identifier = "MIT"
 ----
 
-The `Files:` line contains the whitespace-separated names of one or more
+The `path` line contains a comma-separated list of names of one or more
 files in the repository.
-Wildcards are allowed.
+Wildcards are allowed, including `pass:[**]` to match path separators.
 
-The `Copyright` line contains the copyright statement for those files.
+The `SPDX-FileCopyrightText` line contains the copyright statement for those
+files.
 If there is already a copyright statement in the file without a
 corresponding license, it should be copied verbatim.
 
-The `License` line contains the SPDX license identifier of those files.
+The `SPDX-License-{empty}Identifier` line contains the SPDX license
+identifier of those files.
 
-Multiple sections may be added to `dep5` for different licenses.
+Multiple sections may be added to `REUSE.toml` for different copyrights or
+licenses.
 Be careful not to include filenames repeatedly, or include filenames which
-already have explicit licenses.
-When a filename is repeated in `dep5` with incompatible licenses, behavior
-is unpredictable.
+already have explicit licenses in their text.
+The `precedence` line allows some control over treatment of files with
+multiple, inconsistent licenses.
 
 REUSE has other useful functionality, such as generating a license manifest,
 that Working Groups may find useful.

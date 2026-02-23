@@ -48,14 +48,15 @@ repository on GitHub.
 Specification markup source in asciidoc format is by convention structured
 as follows:
 
-  * `Makefile` (or other build script) to build the specification artifacts.
+  * `Makefile` (or other build script such as CMake or Meson) to build the
+    specification artifacts.
     Normally the Makefile specifies targets (such as `html` or `pdf`) and
     options to invoke asciidoctor with for each target.
     The Sample-Docs repository's `Makefile` is considerably more complex
     than strictly required, since it is intended as an example for use with
     actual specifications that will themselves be much more complex than the
     Sample-Docs specification.
-  * `sample.adoc` (or `__apiname__.adoc` or other meaningful title) -
+  * `sample.adoc` (or `__apiname__.adoc` or other meaningful name) -
     top-level specification markup file, which specifies the document
     headers and includes separate files for chapters and appendices.
   * `chapters/` - directory containing individual asciidoc files
@@ -84,6 +85,11 @@ as follows:
      our work.
   * `images/` - directory containing SVG images included in the
     specification.
+    While other image file formats are supported, SVG is preferred as it can
+    be used with good quality results in both HTML and PDF builds.
+    This directory is *not* a notational convenience.
+    Images and other files which are not themselves asciidoc markup must be
+    kept in a separate directory.
     The Sample-Docs repository contains a single image:
   ** `images/Khronos_RGB_June18.svg` - Khronos logo included
      on the title page of the generated PDF artifact.
