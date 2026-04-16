@@ -137,17 +137,18 @@ Advantages of extended Asciidoctor are:
 
 Disadvantages of extended Asciidoctor are:
 
-  * Requires learning a small amount Ruby, and about Asciidoctor
+  * Requires learning a small amount of Ruby, and about Asciidoctor
     internals.
     Their internal documentation has been improving, but you may still in
-    some cases need to ask questions on the Asciidoctor support forum, or
-    read the Asciidoctor code.
+    some cases need to ask questions on the
+    https://asciidoctor.zulipchat.com/[Asciidoctor support forum], or read
+    the Asciidoctor source code.
   * Requires defining new markup constructs, and educating contributors to
     your project to use them.
 
 
 [[antora]]
-== On the Horizon: Antora Site Generation
+== Antora Site Generation
 
 link:https://docs.antora.org/antora/latest/[Antora] is a site generation
 tool for content written in asciidoctor.
@@ -163,21 +164,24 @@ It supports sitewide indexing, linking, presentation, and search of those
 components.
 
 The link:https://docs.vulkan.org/[Vulkan Documentation Website]
-is Khronos' first step into Antora.
+is Khronos' first use of Antora.
 It incorporates the Vulkan and GLSL Specifications as well as a large amount
 of developer-oriented material including the Vulkan Guide, Reference Pages,
 Samples, and Tutorial.
 
-Over time we expect more Khronos specifications will be published primarily
-in Antora format, but we are still learning, and are not ready to recommend
-Antora as the default publishing format yet.
+Several other Khronos Working Groups are beginning a transition to using
+Antora, and over time, we may publish most of our specifications through
+Antora instead of the <<repomanagement-registry, Khronos Registry>>.
+However, we are still learning, are not ready to recommend Antora as the
+default publishing format yet.
+The Sample repository does not yet demonstrate use of Antora.
 
 Advantages of Antora:
 
   * Enables unified documentation websites combining specifications,
     tutorials, user guides, examples, and other material relevant to an
     ecosystem.
-  * Decent site-wide search using the Lunr extension.
+  * Site-wide search using the Lunr extension.
   * Detailed control of the site UI and styles is possible.
 
 Disadvantages of Antora:
@@ -198,15 +202,14 @@ The different link markup conventions used by Antora were a significant
 barrier to Vulkan, which cannot easily, or soon abandon the
 Asciidoctor-generated specifications we publish in the Registry.
 In an attempt to alleviate this issue, we wrote a series of scripts which
-transform Vulkan specification markup into an Antora-friendly form.
+transform Vulkan and GLSL specification markup into an Antora-friendly form.
 When combined with Asciidoctor.js extensions which interpret
 the semantic markup of the Vulkan specification appropriately
 for Antora, this has enabled us to support both formats.
 
-Unfortunately, the Vulkan approach is specific to the rigid style guidelines
-and the extended semantic markup conventions of that specification, and the
-scripts would require considerable adaptation to be used in other
-specifications.
-
-We hope to have better answers and strategies for Antora migration in the
-relatively near future.
+A similar approach is used with other components of the Vulkan Documentation
+Website, such as the Vulkan Guide, Tutorial, and Samples, but the details
+differ because they use different markup conventions.
+The Vulkan conversion scripts may be applicable to some other repositories
+already using asciidoctor as well, or we can provide assistance in
+constructing a repository-specific conversion tool.

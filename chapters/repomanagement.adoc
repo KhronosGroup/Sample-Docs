@@ -173,6 +173,7 @@ Working Groups will normally go through a process like:
     other channels.
 
 
+[[repomanagement-registry]]
 === The Khronos Registry
 
 Most Khronos specifications are published in the

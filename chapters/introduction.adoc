@@ -59,11 +59,11 @@ Informative notes, such as this paragraph, are used to provide commentary
 and context.
 ====
 
-Khronos specifications are intended for use by both implementors, and
+Khronos specifications are intended for use by both implementers, and
 by application developers seeking to make use of implementations.
 A specification forms a contract between these parties.
 
-Specification text may address either implementors or developers.
+Specification text may address either implementers or developers.
 Typically the intended audience can be inferred from context, though some
 sections are defined to address only one of these parties.
 Any requirements, prohibitions, recommendations or options defined by
@@ -103,7 +103,7 @@ ratified.
 === Informative Language
 
 Some language in a Specification is purely informative, intended to
-give background or suggestions to implementors or developers.
+give background or suggestions to implementers or developers.
 
 If an entire chapter or section contains only informative language, its
 title will be suffixed with "`(Informative)`".
@@ -124,7 +124,7 @@ use where grammatically appropriate.
 These normative words are emphasized in the Specification for clarity.
 In text addressing application developers, their use expresses requirements
 that apply to application behavior.
-In text addressing implementors, their use expresses requirements that apply
+In text addressing implementers, their use expresses requirements that apply
 to implementations.
 
 [NOTE]
@@ -149,7 +149,7 @@ This word means that the API and/or the execution environment provide no
 mechanism through which the application can express or accomplish the action
 described.
 
-These key words are never used in text addressing implementors.
+These key words are never used in text addressing implementers.
 
 [NOTE]
 .Note

@@ -17,6 +17,12 @@ This summarizes periodic public updates, not individual commits.
 
 '''
 
+Change log for April 16, 2026
+
+  * Fix typos and update the Antora section.
+
+'''
+
 Change log for February 22, 2026
 
   * Update repository to current build tools, copyright dates, etc.

@@ -43,7 +43,7 @@ The Khronos default licenses for specifications are:
     so long as they are Ratified Specifications.
     This is required so that such specifications bring Khronos licensees
     under the umbrella of the Khronos IP agreements.
-    Ths Khronos Specification Copyright License should never be used on
+    The Khronos Specification Copyright License should never be used on
     markup or source files, or on specification artifacts that include
     non-ratified content, such as vendor extensions.
 
@@ -139,7 +139,7 @@ copyright statement in the format described above:
     the Khronos licenses for the purposes they are required for.
     However, the way in which these licenses are specified may be different,
     such as including the complete license text in their copyright header,
-    or implcitly using the LICENSE file of their source repository to apply
+    or implicitly using the LICENSE file of their source repository to apply
     to every file in that repository.
     Even if their license allows it, Khronos should never modify that
     license other than by adding Khronos as a copyright owner along with the
